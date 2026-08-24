@@ -1,26 +1,8 @@
-// Couche de chargement des données. Seul endroit qui importe les JSON bruts.
-// Le moteur (combat + run) reçoit ensuite ces données en paramètre — jamais de
-// valeur de gameplay en dur ailleurs.
+// Couche de chargement des données. Depuis le Jalon 3, l'extension active est
+// Bloomburrow (import Scryfall + overrides), assemblée par buildBloomburrow.js.
+// Le moteur reçoit ce `content` en paramètre — aucune valeur en dur ailleurs.
 
-import cardsJson from '../../data/cards-poc.json';
-import balanceJson from '../../data/balance-poc.json';
-import shopJson from '../../data/shop-config.json';
-import encountersJson from '../../data/encounters-poc.json';
-import runMapJson from '../../data/run-map-poc.json';
-import eventsJson from '../../data/events-poc.json';
-import { buildCardDb } from '../engine/index.js';
+import cardsBlb from '../../data/cards-bloomburrow.json';
 
-const stripMeta = ({ _meta, ...rest }) => rest;
-
-export const cardDb = buildCardDb(cardsJson.cards);
-export const cardsMeta = cardsJson._meta;
-
-// Bundle de contenu passé au moteur de run (src/engine/run.js).
-export const content = {
-  cardDb,
-  balance: stripMeta(balanceJson),
-  shop: stripMeta(shopJson),
-  encounters: encountersJson, // { encounters, bosses } ; _meta ignoré par le run
-  levels: runMapJson.levels,
-  events: eventsJson.events,
-};
+export { cardDb, content, archetypes } from './buildBloomburrow.js';
+export const cardsMeta = cardsBlb._meta;

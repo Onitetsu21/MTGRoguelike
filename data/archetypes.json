@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "category": "archetypes",
+    "description": "Les 10 archétypes bicolores de Bloomburrow (cf docs/GAME_DESIGN.md). `mechanic` référence la mécanique-signature ; `colors` sert au tag de draft et à la génération de decks ennemis/boss."
+  },
+  "archetypes": {
+    "azorius": { "name": "Oiseaux", "colors": ["W", "U"], "mechanic": "flying_buff", "blurb": "Les volants renforcent les non-volants." },
+    "dimir": { "name": "Rats", "colors": ["U", "B"], "mechanic": "threshold", "blurb": "Seuil : récompense un cimetière garni." },
+    "rakdos": { "name": "Lézards", "colors": ["B", "R"], "mechanic": "loss_triggers", "blurb": "Déclencheurs agressifs, perte de vie adverse." },
+    "gruul": { "name": "Ratons laveurs", "colors": ["R", "G"], "mechanic": "expend", "blurb": "Dépense : récompense le mana investi en sorts." },
+    "selesnya": { "name": "Lapins", "colors": ["G", "W"], "mechanic": "offspring", "blurb": "Jetons / Renfort, aller large." },
+    "orzhov": { "name": "Chauves-souris", "colors": ["W", "B"], "mechanic": "lifegain", "blurb": "Gain/perte de vie, drain." },
+    "golgari": { "name": "Écureuils", "colors": ["B", "G"], "mechanic": "forage", "blurb": "Fourrager, cimetière comme ressource." },
+    "simic": { "name": "Grenouilles", "colors": ["G", "U"], "mechanic": "etb", "blurb": "Déclencheurs d'entrée en jeu, rebond." },
+    "boros": { "name": "Souris", "colors": ["R", "W"], "mechanic": "valiant", "blurb": "Vaillance : cibler ses propres créatures." },
+    "izzet": { "name": "Loutres", "colors": ["U", "R"], "mechanic": "prowess", "blurb": "Sorts non-créatures récompensés." }
+  }
+}

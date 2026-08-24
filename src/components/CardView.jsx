@@ -7,6 +7,8 @@ const KEYWORD_LABELS = {
   lifelink: 'Lien de vie',
   haste: 'Célérité',
   reach: 'Portée',
+  initiative: 'Initiative',
+  indestructible: 'Indestructible',
 };
 
 const COLOR_NAMES = { W: 'Blanc', U: 'Bleu', B: 'Noir', R: 'Rouge', G: 'Vert' };

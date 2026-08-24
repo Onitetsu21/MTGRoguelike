@@ -14,7 +14,8 @@ import { TitleScreen, VictoryScreen, GameOverScreen } from './SimpleScreens.jsx'
 // Rend chaque écran une fois avec un état réaliste : détecte les crashs de rendu
 // (accès undefined…) que les tests moteur ne couvrent pas.
 const noop = () => {};
-const deck = ['sparrow_scout', 'thornback_pup', 'dawn_cleric', 'venom_stalker', 'bramble_brute', 'ironhide_ox'];
+const ids = Object.keys(cardDb);
+const deck = ids.slice(0, 6);
 const renders = (el) => expect(renderToStaticMarkup(el).length).toBeGreaterThan(0);
 
 describe('rendu des écrans (smoke)', () => {
@@ -46,7 +47,7 @@ describe('rendu des écrans (smoke)', () => {
       pending: {
         kind: 'shop',
         offers: {
-          cards: [{ cardId: 'radiant_pegasus', price: 120 }, { cardId: 'sparrow_scout', price: 40 }],
+          cards: [{ cardId: ids[0], price: 120 }, { cardId: ids[1], price: 40 }],
           booster: { price: 60 },
           manaCap: { price: 80 },
           heal: { hp: 10, price: 30 },
@@ -55,7 +56,7 @@ describe('rendu des écrans (smoke)', () => {
     };
     renders(<ShopScreen run={run} cardDb={cardDb} onBuyCard={noop} onBuyManaCap={noop} onBuyHeal={noop} onBuyBooster={noop} onPickBooster={noop} onLeave={noop} />);
     // variante : pioche de booster en cours
-    const run2 = { ...run, pending: { ...run.pending, boosterPick: { choices: ['sparrow_scout', 'plague_rat', 'giant_spider'], picks: 1 } } };
+    const run2 = { ...run, pending: { ...run.pending, boosterPick: { choices: ids.slice(0, 3), picks: 1 } } };
     renders(<ShopScreen run={run2} cardDb={cardDb} onBuyCard={noop} onBuyManaCap={noop} onBuyHeal={noop} onBuyBooster={noop} onPickBooster={noop} onLeave={noop} />);
   });
 
@@ -67,7 +68,7 @@ describe('rendu des écrans (smoke)', () => {
   it('consolation', () => {
     const run = {
       currentHp: 80, maxHp: 80, gold: 0, manaCap: 5, deck, level: 0,
-      pending: { kind: 'combat', consolation: { colors: ['W', 'R'], choices: ['sparrow_scout', 'thornback_pup', 'dawn_cleric'] } },
+      pending: { kind: 'combat', consolation: { colors: ['W', 'R'], choices: ids.slice(0, 3) } },
     };
     renders(<ConsolationScreen run={run} cardDb={cardDb} onPick={noop} />);
   });

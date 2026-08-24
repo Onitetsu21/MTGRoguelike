@@ -7,6 +7,8 @@ const KEYWORD_ICONS = {
   lifelink: { icon: '✚', label: 'Lien de vie' },
   haste: { icon: '⚡', label: 'Célérité' },
   reach: { icon: '🏹', label: 'Portée' },
+  initiative: { icon: '⚔', label: 'Initiative' },
+  indestructible: { icon: '🛡', label: 'Indestructible' },
 };
 
 // Créature posée sur le champ de bataille.

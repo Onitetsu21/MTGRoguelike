@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "category": "cards-overrides",
+    "description": "Cartes-signaux réécrites à la main (couche hybride). Fusionnées PAR-DESSUS cards-bloomburrow.json au chargement (patch par id, ou ajout). Portent les mécaniques via le schéma `abilities` du Jalon 3. Rejouer l'import Scryfall ne les écrase pas.",
+    "note": "Mécaniques à coût/zone (Renfort optionnel, Don, Fourrager, Rappel, Surcharge) : étape suivante. Ici : Percée, Seuil, Dépense, Vaillance, Prowess, ETB, on_death, jetons."
+  },
+  "cards": [
+    { "id": "sig_azorius_sentinel", "name": "Sentinelle des Cimes", "type": "creature", "colors": ["W", "U"], "cost": 3, "power": 2, "toughness": 3, "keywords": ["flying"], "archetypes": ["azorius"], "rarity": "uncommon", "signpost": true, "text": "Vol. À l'attaque, vos autres créatures gagnent +1/+0 ce tour.",
+      "abilities": [{ "trigger": "on_attack", "effect": { "type": "buff", "power": 1, "toughness": 0, "duration": "turn", "target": "all_allies" } }] },
+
+    { "id": "sig_dimir_lurker", "name": "Rôdeur des Bas-fonds", "type": "creature", "colors": ["U", "B"], "cost": 3, "power": 2, "toughness": 2, "keywords": [], "archetypes": ["dimir"], "rarity": "uncommon", "signpost": true, "text": "Seuil — à l'attaque, si 7+ cartes au cimetière, +3/+0 ce tour.",
+      "abilities": [{ "trigger": "on_attack", "condition": { "kind": "threshold", "min": 7 }, "effect": { "type": "buff", "power": 3, "toughness": 0, "duration": "turn", "target": "self" } }] },
+
+    { "id": "sig_rakdos_firebrand", "name": "Brandon Écaille-de-feu", "type": "creature", "colors": ["B", "R"], "cost": 2, "power": 2, "toughness": 2, "keywords": ["haste"], "archetypes": ["rakdos"], "rarity": "uncommon", "signpost": true, "text": "Célérité. À sa mort, inflige 2 dégâts à l'adversaire.",
+      "abilities": [{ "trigger": "on_death", "effect": { "type": "deal_damage", "amount": 2, "target": "enemy_face" } }] },
+
+    { "id": "sig_gruul_channeler", "name": "Canalisatrice Ratonne", "type": "creature", "colors": ["R", "G"], "cost": 3, "power": 3, "toughness": 3, "keywords": [], "archetypes": ["gruul"], "rarity": "uncommon", "signpost": true, "text": "Dépense 4 — quand vous jouez un sort et avez dépensé 4+ mana en sorts ce tour, +2/+2 (1x/tour).",
+      "abilities": [{ "trigger": "on_spell_cast", "condition": { "kind": "expend", "min": 4 }, "limit_per_turn": 1, "effect": { "type": "buff", "power": 2, "toughness": 2, "duration": "turn", "target": "self" } }] },
+
+    { "id": "sig_gruul_landcaller", "name": "Appelante du Sol", "type": "creature", "colors": ["R", "G"], "cost": 2, "power": 1, "toughness": 1, "keywords": [], "archetypes": ["gruul"], "rarity": "common", "signpost": true, "text": "Percée — à chaque palier de mana atteint, +1/+1 (permanent).",
+      "abilities": [{ "trigger": "on_mana_tier", "effect": { "type": "buff", "power": 1, "toughness": 1, "duration": "permanent", "target": "self" } }] },
+
+    { "id": "sig_selesnya_warren", "name": "Doyenne du Terrier", "type": "creature", "colors": ["G", "W"], "cost": 2, "power": 1, "toughness": 1, "keywords": [], "archetypes": ["selesnya"], "rarity": "uncommon", "signpost": true, "text": "Quand elle arrive, créez un jeton Lapin 1/1.",
+      "abilities": [{ "trigger": "on_enter", "effect": { "type": "create_token", "power": 1, "toughness": 1, "count": 1, "name": "Lapin" } }] },
+
+    { "id": "sig_orzhov_cleric", "name": "Prêtresse Chauve-souris", "type": "creature", "colors": ["W", "B"], "cost": 3, "power": 2, "toughness": 2, "keywords": ["flying", "lifelink"], "archetypes": ["orzhov"], "rarity": "uncommon", "signpost": true, "text": "Vol, lien de vie. Quand elle arrive, gagnez 2 PV.",
+      "abilities": [{ "trigger": "on_enter", "effect": { "type": "gain_life", "amount": 2 } }] },
+
+    { "id": "sig_golgari_forager", "name": "Fossoyeuse Écureuil", "type": "creature", "colors": ["B", "G"], "cost": 3, "power": 2, "toughness": 3, "keywords": [], "archetypes": ["golgari"], "rarity": "uncommon", "signpost": true, "text": "À sa mort, créez un jeton Écureuil 1/1.",
+      "abilities": [{ "trigger": "on_death", "effect": { "type": "create_token", "power": 1, "toughness": 1, "count": 1, "name": "Écureuil" } }] },
+
+    { "id": "sig_simic_frog", "name": "Batracien Clignotant", "type": "creature", "colors": ["G", "U"], "cost": 3, "power": 2, "toughness": 2, "keywords": [], "archetypes": ["simic"], "rarity": "uncommon", "signpost": true, "text": "Quand il arrive, vos créatures gagnent +0/+1 ce tour.",
+      "abilities": [{ "trigger": "on_enter", "effect": { "type": "buff", "power": 0, "toughness": 1, "duration": "turn", "target": "all_allies" } }] },
+
+    { "id": "sig_boros_duelist", "name": "Bretteuse Souris", "type": "creature", "colors": ["R", "W"], "cost": 2, "power": 2, "toughness": 1, "keywords": [], "archetypes": ["boros"], "rarity": "uncommon", "signpost": true, "text": "Vaillance — la première fois qu'elle est ciblée par un de vos sorts chaque tour, +1/+1 (permanent).",
+      "abilities": [{ "trigger": "on_targeted_by_own", "limit_per_turn": 1, "effect": { "type": "buff", "power": 1, "toughness": 1, "duration": "permanent", "target": "self" } }] },
+
+    { "id": "sig_izzet_otter", "name": "Loutre Prodige", "type": "creature", "colors": ["U", "R"], "cost": 2, "power": 1, "toughness": 2, "keywords": [], "archetypes": ["izzet"], "rarity": "uncommon", "signpost": true, "text": "Prouesse — quand vous jouez un sort, +1/+0 ce tour.",
+      "abilities": [{ "trigger": "on_spell_cast", "effect": { "type": "buff", "power": 1, "toughness": 0, "duration": "turn", "target": "self" } }] },
+
+    { "id": "sig_izzet_bolt", "name": "Étincelle Loutrienne", "type": "sorcery", "colors": ["U", "R"], "cost": 1, "archetypes": ["izzet"], "rarity": "common", "signpost": true, "text": "Inflige 2 dégâts à une créature ou un joueur ciblé.",
+      "abilities": [{ "trigger": "cast", "effect": { "type": "deal_damage", "amount": 2, "target": "chosen_any" } }] },
+
+    { "id": "sig_boros_blessing", "name": "Bénédiction Vaillante", "type": "sorcery", "colors": ["R", "W"], "cost": 1, "archetypes": ["boros"], "rarity": "common", "signpost": true, "text": "Une créature que vous contrôlez gagne +1/+1 jusqu'à la fin du tour (déclenche Vaillance).",
+      "abilities": [{ "trigger": "cast", "effect": { "type": "buff", "power": 1, "toughness": 1, "duration": "turn", "target": "chosen_creature" } }] },
+
+    { "id": "sig_gruul_fury", "name": "Fureur Sauvage", "type": "sorcery", "colors": ["R", "G"], "cost": 2, "archetypes": ["gruul"], "rarity": "common", "signpost": true, "text": "Une créature que vous contrôlez gagne +2/+2 jusqu'à la fin du tour.",
+      "abilities": [{ "trigger": "cast", "effect": { "type": "buff", "power": 2, "toughness": 2, "duration": "turn", "target": "chosen_creature" } }] }
+  ]
+}

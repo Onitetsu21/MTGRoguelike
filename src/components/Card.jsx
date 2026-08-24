@@ -7,6 +7,8 @@ const KEYWORD_LABELS = {
   lifelink: 'Lien de vie',
   haste: 'Célérité',
   reach: 'Portée',
+  initiative: 'Initiative',
+  indestructible: 'Indestructible',
 };
 
 // Carte de la main du joueur.
