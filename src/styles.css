@@ -623,3 +623,250 @@ body {
   color: var(--text-dim);
   font-size: 13px;
 }
+
+/* ============================================================= */
+/* Cadre de carte façon Magic (Jalon 3 — design)                 */
+/* ============================================================= */
+
+.mtg-card {
+  --frame: #c9cdd6;
+  --frame-dark: #8a8f99;
+  width: 150px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 6px 8px;
+  border: 3px solid var(--frame);
+  border-radius: 11px;
+  background: linear-gradient(180deg, #efe9d8, #e2dabf);
+  color: #17150f;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+  cursor: default;
+  transition: transform 0.09s ease, box-shadow 0.09s ease;
+}
+.mtg-card[role='button'] {
+  cursor: pointer;
+}
+.mtg-card[role='button']:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.55);
+}
+.mtg-card.is-disabled {
+  filter: grayscale(0.65) brightness(0.82);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.mtg-card.is-selected {
+  outline: 3px solid var(--accent);
+  outline-offset: 1px;
+}
+.mtg-card.is-targetable {
+  outline: 3px solid var(--target);
+  outline-offset: 1px;
+  box-shadow: 0 0 16px rgba(255, 180, 84, 0.7);
+}
+
+/* Couleurs d'identité (cadre) */
+.frame-mono-W { --frame: #e9e0b8; --frame-dark: #b7a15a; }
+.frame-mono-U { --frame: #6fb2e0; --frame-dark: #2f74ac; }
+.frame-mono-B { --frame: #9a8ea0; --frame-dark: #4b4350; }
+.frame-mono-R { --frame: #e08a6f; --frame-dark: #ab4a2f; }
+.frame-mono-G { --frame: #7bbd82; --frame-dark: #3f8a52; }
+.frame-multi { --frame: #e6c86e; --frame-dark: #b2913a; }
+.frame-colorless { --frame: #c3c8d2; --frame-dark: #878d99; }
+
+.mtg-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, var(--frame), var(--frame-dark));
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.mtg-name {
+  flex: 1;
+  min-width: 0;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #14120c;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.mtg-cost {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 800;
+  color: #0c0c0c;
+  background: #efe6cf;
+  border: 1px solid rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+.pip-mono-W { background: #f4efd6; }
+.pip-mono-U { background: #7fbdea; }
+.pip-mono-B { background: #b6acbb; }
+.pip-mono-R { background: #ed9a83; }
+.pip-mono-G { background: #8ccb92; }
+.pip-multi { background: #eccf77; }
+
+/* Cartouche d'illustration */
+.mtg-art {
+  position: relative;
+  height: 78px;
+  margin: 5px 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.35), transparent 60%),
+    linear-gradient(160deg, var(--frame), var(--frame-dark));
+  display: grid;
+  place-items: center;
+}
+.mtg-art-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mtg-art-glyph {
+  font-size: 34px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
+
+.mtg-typeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  margin-top: 5px;
+  padding: 2px 6px;
+  font-size: 9.5px;
+  font-weight: 700;
+  border-radius: 5px;
+  background: linear-gradient(180deg, var(--frame), var(--frame-dark));
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  color: #1a1710;
+}
+.mtg-colors-inline { font-weight: 600; opacity: 0.8; }
+.mtg-setgem {
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 900;
+  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+.gem-common { background: #2b2b2b; }
+.gem-uncommon { background: #7d8a99; }
+.gem-rare { background: #c9a53b; }
+.gem-mythic { background: #d1541f; }
+
+.mtg-textbox {
+  flex: 1;
+  margin-top: 5px;
+  padding: 5px 6px;
+  min-height: 40px;
+  border-radius: 5px;
+  background: rgba(255, 252, 240, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  font-size: 10px;
+  line-height: 1.25;
+}
+.mtg-keywords { margin: 0 0 2px; font-weight: 800; color: #3a2f12; }
+.mtg-rules { margin: 0; color: #2a2a2a; }
+
+.mtg-pt {
+  align-self: flex-end;
+  margin-top: 5px;
+  padding: 1px 9px;
+  font-size: 14px;
+  font-weight: 900;
+  color: #14120c;
+  background: linear-gradient(180deg, var(--frame), var(--frame-dark));
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+.mtg-footer {
+  margin-top: 6px;
+  text-align: center;
+  font-weight: 800;
+  color: #14120c;
+}
+
+/* La main réutilise le cadre : ajuster la hauteur du bandeau */
+.hand { min-height: 214px; align-items: stretch; }
+
+/* ---- Créatures (jeton compact façon carte) — surcharge du POC ---- */
+.creature {
+  width: 104px;
+  min-height: 96px;
+  padding: 5px;
+  border: 2px solid var(--frame, var(--border));
+  border-radius: 8px;
+  background: linear-gradient(180deg, #efe9d8, #ded5b8);
+  color: #17150f;
+}
+.creature.frame-mono-W { --frame: #d9cf9f; }
+.creature.frame-mono-U { --frame: #6fb2e0; }
+.creature.frame-mono-B { --frame: #9a8ea0; }
+.creature.frame-mono-R { --frame: #e08a6f; }
+.creature.frame-mono-G { --frame: #7bbd82; }
+.creature.frame-multi { --frame: #e6c86e; }
+.creature.frame-colorless { --frame: #c3c8d2; }
+.creature .creature-name {
+  font-size: 10px;
+  font-weight: 800;
+  color: #14120c;
+  line-height: 1.05;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.creature-art {
+  position: relative;
+  height: 34px;
+  margin: 3px 0;
+  border-radius: 4px;
+  background: linear-gradient(160deg, var(--frame), rgba(0, 0, 0, 0.25));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.creature-glyph { font-size: 22px; }
+.creature .creature-keywords {
+  position: absolute;
+  right: 2px;
+  bottom: 1px;
+  display: flex;
+  gap: 1px;
+  font-size: 11px;
+  min-height: 0;
+}
+.creature-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.creature .creature-stats { font-size: 16px; font-weight: 900; color: #14120c; }
+.creature .creature-stats .slash { color: #6a5f3f; margin: 0 1px; font-weight: 500; }
+.creature .creature-stats .buffed { color: #1c7a34; }
+.creature .creature-damage { font-size: 11px; font-weight: 800; color: #b02a1a; }
+.creature.selectable { box-shadow: 0 0 0 2px rgba(110, 168, 254, 0.5); }
+.creature.selected { box-shadow: 0 0 12px rgba(110, 168, 254, 0.9); }
+.creature.targetable { box-shadow: 0 0 12px rgba(255, 180, 84, 0.9); cursor: crosshair; }
+.creature.wounded { filter: saturate(0.85) brightness(0.95); }
+.creature.sick { opacity: 0.9; }

@@ -1,6 +1,7 @@
 // Pré-génération hors-ligne du pool Bloomburrow depuis Scryfall.
 // Usage :
 //   node scripts/fetch-cards.mjs                     # fetch live → data/cards-bloomburrow.json
+//   node scripts/fetch-cards.mjs --art               # + télécharge les illustrations dans public/art/ (git-ignoré)
 //   node scripts/fetch-cards.mjs --cache <dir>       # lit <dir>/{en,fr}{1..}.json au lieu du réseau
 //
 // APPROCHE HYBRIDE (Jalon 3) : on importe automatiquement les CRÉATURES
@@ -9,12 +10,13 @@
 // mécanique sont réécrites à la main dans data/cards-bloomburrow-overrides.json,
 // fusionné au chargement. Le jeu ne dépend jamais du réseau.
 
-import { writeFileSync, readFileSync } from 'node:fs';
+import { writeFileSync, readFileSync, mkdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dirname, '..', 'data', 'cards-bloomburrow.json');
+const ART_DIR = join(__dirname, '..', 'public', 'art'); // git-ignoré
 
 // Scryfall keyword (EN) -> mot-clé supporté par notre moteur.
 const KEYWORD_MAP = {
@@ -108,7 +110,19 @@ function toCard(en, frName) {
     archetypes: archetypesFor(colors),
     text: text ? `${text}.` : '',
     rarity: en.rarity === 'mythic' ? 'mythic' : en.rarity,
+    _artUrl: en.image_uris?.art_crop ?? en.card_faces?.[0]?.image_uris?.art_crop ?? null,
   };
+}
+
+// Télécharge une illustration (art_crop) dans public/art/<id>.jpg.
+async function downloadArt(url, id) {
+  const dest = join(ART_DIR, `${id}.jpg`);
+  if (existsSync(dest)) return true;
+  const res = await fetch(url);
+  if (!res.ok) return false;
+  const buf = Buffer.from(await res.arrayBuffer());
+  writeFileSync(dest, buf);
+  return true;
 }
 
 async function main() {
@@ -139,6 +153,22 @@ async function main() {
     cards.push(card);
   }
   cards.sort((a, b) => a.cost - b.cost || a.id.localeCompare(b.id));
+
+  // Option --art : télécharge les illustrations en local (git-ignorées).
+  const artMode = process.argv.includes('--art');
+  if (artMode) {
+    mkdirSync(ART_DIR, { recursive: true });
+    let ok = 0;
+    for (const c of cards) {
+      if (c._artUrl && (await downloadArt(c._artUrl, c.id))) {
+        c.art = `art/${c.id}.jpg`;
+        ok++;
+      }
+      await new Promise((r) => setTimeout(r, 90)); // courtoisie Scryfall
+    }
+    console.log(`Illustrations téléchargées : ${ok}/${cards.length} → public/art/`);
+  }
+  for (const c of cards) delete c._artUrl;
 
   const out = {
     _meta: {
