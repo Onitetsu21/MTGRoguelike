@@ -431,3 +431,195 @@ body {
   font-weight: 800;
   cursor: pointer;
 }
+
+/* ============================================================= */
+/* Écrans de run (Jalon 2 : draft, carte, boutique, événements)  */
+/* ============================================================= */
+
+.screen {
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  overflow-y: auto;
+}
+.screen-header {
+  text-align: center;
+}
+.screen-header h1 {
+  margin: 0 0 4px;
+}
+.screen-sub {
+  margin: 0;
+  color: var(--text-dim);
+}
+
+/* HUD de run */
+.run-hud {
+  display: flex;
+  gap: 18px;
+  padding: 10px 18px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 15px;
+}
+.hud-hp { color: var(--danger); font-weight: 700; }
+.hud-gold { color: var(--gold); font-weight: 700; }
+
+/* Grille de cartes (draft, boutique, consolation) */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  max-width: 900px;
+}
+.card-colors {
+  display: flex;
+  gap: 4px;
+  min-height: 10px;
+  margin-top: 2px;
+}
+.color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+.color-W { background: #f4f2e0; }
+.color-U { background: #4a90d9; }
+.color-B { background: #6b5b73; }
+.color-R { background: #d9534f; }
+.color-G { background: #4ca87a; }
+.card-footer {
+  margin-top: 6px;
+  text-align: center;
+  font-weight: 700;
+}
+.price { color: var(--gold); }
+
+/* Titre / fin */
+.title-screen,
+.end-screen {
+  justify-content: center;
+}
+.title-box {
+  text-align: center;
+  padding: 40px 56px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.title-box h1 {
+  margin: 0 0 10px;
+  font-size: 32px;
+}
+.big-btn {
+  margin-top: 20px;
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: 800;
+  background: var(--accent);
+  color: #08131f;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.big-btn:hover { filter: brightness(1.1); }
+
+/* Carte de run */
+.run-map {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+}
+.map-row {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+.map-node {
+  width: 120px;
+  height: 82px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font: inherit;
+  cursor: default;
+  opacity: 0.55;
+}
+.map-node .node-icon { font-size: 26px; }
+.map-node .node-label { font-size: 12px; color: var(--text-dim); }
+.map-node.reachable {
+  opacity: 1;
+  cursor: pointer;
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(110, 168, 254, 0.45);
+}
+.map-node.reachable:hover { transform: translateY(-3px); }
+.map-node.visited { opacity: 0.85; border-color: var(--good); }
+.map-node.node-boss { border-top-color: var(--gold); }
+
+/* Boutique */
+.shop-section { width: 100%; max-width: 900px; text-align: center; }
+.shop-section h2 { font-size: 16px; }
+.shop-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.shop-actions button,
+.leave-btn {
+  padding: 12px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.shop-actions button:hover:not(:disabled),
+.leave-btn:hover { border-color: var(--accent); }
+.shop-actions button:disabled { opacity: 0.4; cursor: not-allowed; }
+.leave-btn { background: var(--good); color: #06210f; border: none; font-weight: 800; }
+
+/* Événement */
+.event-card {
+  max-width: 480px;
+  text-align: center;
+  padding: 28px 36px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.event-text { color: var(--text); line-height: 1.5; }
+.event-card button {
+  margin-top: 18px;
+  padding: 12px 26px;
+  background: var(--accent);
+  color: #08131f;
+  border: none;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* Bandeau au-dessus du combat */
+.combat-banner {
+  text-align: center;
+  padding: 4px;
+  color: var(--text-dim);
+  font-size: 13px;
+}
