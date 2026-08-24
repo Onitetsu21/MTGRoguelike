@@ -4,7 +4,9 @@
 import { KEYWORDS, CARD_TYPES } from './constants.js';
 
 export function hasKeyword(creature, keyword) {
-  return Array.isArray(creature.keywords) && creature.keywords.includes(keyword);
+  if (Array.isArray(creature.keywords) && creature.keywords.includes(keyword)) return true;
+  // Mots-clés octroyés temporairement/en permanence (grant_keyword).
+  return Array.isArray(creature.grantedKeywords) && creature.grantedKeywords.some((g) => g.keyword === keyword);
 }
 
 // Somme des buffs temporaires appliqués à une créature.
@@ -29,6 +31,7 @@ export function remainingToughness(creature) {
 }
 
 export function isDead(creature) {
+  if (hasKeyword(creature, KEYWORDS.INDESTRUCTIBLE)) return false; // survit dégâts & « détruire »
   return creature.markedDamage >= effectiveToughness(creature);
 }
 
@@ -74,12 +77,17 @@ export function getAttackTargets(state, attackerId) {
   return { face: true, creatures: enemyCreatures };
 }
 
-// Cibles valides pour un rituel.
+// Cibles valides pour un rituel (pour l'UI). Dérivé du type de cible de la
+// capacité `cast` : « chosen_any » = créature (des 2 camps) ou adversaire ;
+// « chosen_creature » = créature alliée. Les autres cibles sont automatiques.
 export function getSpellTargets(state, instanceId) {
   const card = state.players.player.hand.find((c) => c.instanceId === instanceId);
   if (!card || card.type !== CARD_TYPES.SORCERY) return { needsTarget: false };
-  if (card.effect === 'deal_damage') {
-    // N'importe quelle créature (des deux camps) ou l'adversaire.
+
+  const castEffect = card.abilities?.find((a) => a.trigger === 'cast')?.effect;
+  const targetKind = castEffect?.target;
+
+  if (targetKind === 'chosen_any') {
     return {
       needsTarget: true,
       face: 'bot',
@@ -89,8 +97,7 @@ export function getSpellTargets(state, instanceId) {
       ],
     };
   }
-  if (card.effect === 'buff') {
-    // Une créature alliée uniquement.
+  if (targetKind === 'chosen_creature') {
     return {
       needsTarget: true,
       face: null,

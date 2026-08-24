@@ -3,7 +3,32 @@
 
 import { shuffle } from './rng.js';
 
-// Transforme une définition de carte (issue de cards-poc.json) en instance jouable,
+// Normalise les capacités d'une carte. Les rituels « legacy » (effect/value/buff
+// du POC/MVP) sont convertis en une capacité `cast`, tout en conservant les
+// champs d'origine (utilisés par l'UI de ciblage et l'IA du bot).
+function normalizeAbilities(def) {
+  if (Array.isArray(def.abilities)) return def.abilities.map((a) => structuredClone(a));
+  if (def.effect === 'deal_damage') {
+    return [{ trigger: 'cast', effect: { type: 'deal_damage', amount: def.value, target: 'chosen_any' } }];
+  }
+  if (def.effect === 'buff') {
+    return [
+      {
+        trigger: 'cast',
+        effect: {
+          type: 'buff',
+          power: def.buff?.power ?? 0,
+          toughness: def.buff?.toughness ?? 0,
+          duration: def.buff?.duration ?? 'turn',
+          target: 'chosen_creature',
+        },
+      },
+    ];
+  }
+  return [];
+}
+
+// Transforme une définition de carte (issue d'un JSON) en instance jouable,
 // avec un identifiant unique. Une instance conserve toutes les données statiques
 // de la carte + un instanceId, mais reste une simple donnée sérialisable.
 export function makeInstance(def, instanceId, controller) {
@@ -16,11 +41,13 @@ export function makeInstance(def, instanceId, controller) {
     cost: def.cost,
     text: def.text ?? '',
     rarity: def.rarity ?? 'common',
+    colors: def.colors ? [...def.colors] : [],
     keywords: def.keywords ? [...def.keywords] : [],
+    abilities: normalizeAbilities(def),
     // Champs créature (undefined pour les rituels)
     power: def.power,
     toughness: def.toughness,
-    // Champs rituel (undefined pour les créatures)
+    // Champs rituel legacy (undefined pour les créatures) — conservés pour l'UI/IA
     effect: def.effect,
     value: def.value,
     buff: def.buff ? { ...def.buff } : undefined,

@@ -168,7 +168,7 @@ describe('célérité', () => {
 describe('rituels', () => {
   it('les dégâts directs peuvent tuer une créature', () => {
     const s = makeCombatState([], [{ id: 'flyer', power: 1, toughness: 1, keywords: ['flying'] }]);
-    s.players.player.hand = [{ instanceId: 'bolt1', cardId: 'bolt', name: 'Éclair', type: 'sorcery', cost: 1, effect: 'deal_damage', value: 2, keywords: [] }];
+    s.players.player.hand = [{ instanceId: 'bolt1', cardId: 'bolt', name: 'Éclair', type: 'sorcery', cost: 1, effect: 'deal_damage', value: 2, keywords: [], abilities: [{ trigger: 'cast', effect: { type: 'deal_damage', amount: 2, target: 'chosen_any' } }] }];
     s.players.player.mana = 5;
     const after = playCard(s, 'bolt1', { type: 'creature', instanceId: 'b-flyer' });
     expect(after.players.bot.board).toHaveLength(0);
@@ -176,7 +176,7 @@ describe('rituels', () => {
 
   it('le buff est temporaire (+2/+2) et expire en fin de tour', () => {
     const s = makeCombatState([{ id: 'bear', power: 3, toughness: 3 }], []);
-    s.players.player.hand = [{ instanceId: 'pump1', cardId: 'pump', name: 'Boost', type: 'sorcery', cost: 1, effect: 'buff', buff: { power: 2, toughness: 2 }, keywords: [] }];
+    s.players.player.hand = [{ instanceId: 'pump1', cardId: 'pump', name: 'Boost', type: 'sorcery', cost: 1, effect: 'buff', buff: { power: 2, toughness: 2 }, keywords: [], abilities: [{ trigger: 'cast', effect: { type: 'buff', power: 2, toughness: 2, duration: 'turn', target: 'chosen_creature' } }] }];
     s.players.player.mana = 5;
     const buffed = playCard(s, 'pump1', { type: 'creature', instanceId: 'p-bear' });
     expect(effectivePower(buffed.players.player.board[0])).toBe(5);
