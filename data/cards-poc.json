@@ -1,0 +1,150 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "category": "cards",
+    "description": "Cartes de test POC — pas de vraies cartes Magic, uniquement pour valider la boucle de combat",
+    "balance_notes": "Force + Endurance combinées ≈ coût * 3, réparties selon le rôle de la carte (agressif = plus de Force, défensif = plus d'Endurance). Les créatures à mot-clé (Vol / Piétinement / Toucher mortel) reçoivent un léger malus de stats pour compenser la valeur du mot-clé."
+  },
+  "cards": [
+    {
+      "id": "sparrow_scout",
+      "name": "Éclaireuse Moineau",
+      "type": "creature",
+      "cost": 1,
+      "power": 1,
+      "toughness": 1,
+      "keywords": ["flying"],
+      "text": "Vol.",
+      "rarity": "common"
+    },
+    {
+      "id": "thornback_pup",
+      "name": "Chiot des Ronces",
+      "type": "creature",
+      "cost": 1,
+      "power": 2,
+      "toughness": 1,
+      "keywords": [],
+      "text": "Une petite bête agressive.",
+      "rarity": "common"
+    },
+    {
+      "id": "venom_stalker",
+      "name": "Traqueur Venimeux",
+      "type": "creature",
+      "cost": 2,
+      "power": 1,
+      "toughness": 3,
+      "keywords": ["deathtouch"],
+      "text": "Toucher mortel.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "mossback_turtle",
+      "name": "Tortue Moussue",
+      "type": "creature",
+      "cost": 2,
+      "power": 1,
+      "toughness": 5,
+      "keywords": [],
+      "text": "Un mur patient.",
+      "rarity": "common"
+    },
+    {
+      "id": "wild_charger",
+      "name": "Chargeuse Sauvage",
+      "type": "creature",
+      "cost": 2,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "text": "Fonce sans réfléchir.",
+      "rarity": "common"
+    },
+    {
+      "id": "skyfang_hawk",
+      "name": "Faucon Croc-du-Ciel",
+      "type": "creature",
+      "cost": 3,
+      "power": 3,
+      "toughness": 2,
+      "keywords": ["flying"],
+      "text": "Vol.",
+      "rarity": "common"
+    },
+    {
+      "id": "bramble_brute",
+      "name": "Brute des Ronces",
+      "type": "creature",
+      "cost": 3,
+      "power": 4,
+      "toughness": 3,
+      "keywords": ["trample"],
+      "text": "Piétinement.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "ironhide_ox",
+      "name": "Bœuf Cuirassé",
+      "type": "creature",
+      "cost": 4,
+      "power": 4,
+      "toughness": 6,
+      "keywords": [],
+      "text": "Difficile à abattre.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "gale_griffin",
+      "name": "Griffon des Bourrasques",
+      "type": "creature",
+      "cost": 4,
+      "power": 4,
+      "toughness": 4,
+      "keywords": ["flying"],
+      "text": "Vol.",
+      "rarity": "rare"
+    },
+    {
+      "id": "dread_reaper",
+      "name": "Faucheur Redouté",
+      "type": "creature",
+      "cost": 5,
+      "power": 6,
+      "toughness": 7,
+      "keywords": ["trample"],
+      "text": "Piétinement.",
+      "rarity": "rare"
+    },
+    {
+      "id": "lightning_jolt",
+      "name": "Secousse Foudroyante",
+      "type": "sorcery",
+      "cost": 1,
+      "effect": "deal_damage",
+      "value": 2,
+      "text": "Inflige 2 dégâts à une créature ou un joueur ciblé.",
+      "rarity": "common"
+    },
+    {
+      "id": "quick_strike",
+      "name": "Frappe Rapide",
+      "type": "sorcery",
+      "cost": 2,
+      "effect": "deal_damage",
+      "value": 3,
+      "text": "Inflige 3 dégâts à une créature ou un joueur ciblé.",
+      "rarity": "common"
+    },
+    {
+      "id": "titans_might",
+      "name": "Vigueur du Titan",
+      "type": "sorcery",
+      "cost": 2,
+      "effect": "buff",
+      "buff": { "power": 2, "toughness": 2, "duration": "turn" },
+      "text": "Une créature que vous contrôlez gagne +2/+2 jusqu'à la fin du tour.",
+      "rarity": "common"
+    }
+  ]
+}

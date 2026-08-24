@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "category": "decks",
+    "description": "Decks fixes du POC. Chaque entrée référence un id de cards-poc.json. Les deux decks sont mélangés au début du combat.",
+    "notes": "12 cartes par deck, courbe de mana étalée de 1 à 5. Aucune valeur de carte ici — uniquement des références d'id."
+  },
+  "decks": {
+    "player": [
+      "thornback_pup",
+      "sparrow_scout",
+      "lightning_jolt",
+      "wild_charger",
+      "venom_stalker",
+      "quick_strike",
+      "titans_might",
+      "skyfang_hawk",
+      "bramble_brute",
+      "ironhide_ox",
+      "gale_griffin",
+      "dread_reaper"
+    ],
+    "bot": [
+      "thornback_pup",
+      "sparrow_scout",
+      "lightning_jolt",
+      "mossback_turtle",
+      "wild_charger",
+      "venom_stalker",
+      "quick_strike",
+      "skyfang_hawk",
+      "bramble_brute",
+      "ironhide_ox",
+      "gale_griffin",
+      "dread_reaper"
+    ]
+  }
+}
