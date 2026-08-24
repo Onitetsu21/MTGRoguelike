@@ -4,6 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "description": "Roguelike de deckbuilding solo (POC — Jalon 1)",
+  "engines": {
+    "node": ">=18.18"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
