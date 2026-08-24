@@ -75,13 +75,16 @@ const snake = (name) =>
     .replace(/[^a-z0-9]+/g, '_')
     .replace(/^_+|_+$/g, '');
 
-async function fetchPages(query, cacheFiles) {
+// Scryfall exige un User-Agent et un Accept explicites (sinon 400/403).
+const SCRY_HEADERS = { 'User-Agent': 'MTGRoguelike/1.0 (perso, offline)', Accept: 'application/json' };
+
+async function fetchPages(query, cacheFiles, unique = 'cards') {
   if (cacheFiles) return cacheFiles.map((f) => JSON.parse(readFileSync(f, 'utf8')).data).flat();
   const out = [];
-  let url = `https://api.scryfall.com/cards/search?q=${encodeURIComponent(query)}&unique=cards`;
+  let url = `https://api.scryfall.com/cards/search?q=${encodeURIComponent(query)}&unique=${unique}`;
   while (url) {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Scryfall ${res.status}`);
+    const res = await fetch(url, { headers: SCRY_HEADERS });
+    if (!res.ok) throw new Error(`Scryfall ${res.status} sur ${url}`);
     const data = await res.json();
     out.push(...data.data);
     url = data.has_more ? data.next_page : null;
@@ -118,7 +121,7 @@ function toCard(en, frName) {
 async function downloadArt(url, id) {
   const dest = join(ART_DIR, `${id}.jpg`);
   if (existsSync(dest)) return true;
-  const res = await fetch(url);
+  const res = await fetch(url, { headers: SCRY_HEADERS });
   if (!res.ok) return false;
   const buf = Buffer.from(await res.arrayBuffer());
   writeFileSync(dest, buf);
@@ -135,7 +138,8 @@ async function main() {
   );
   const fr = await fetchPages(
     'set:blb lang:fr -type:land',
-    cacheDir ? [join(cacheDir, 'fr1.json'), join(cacheDir, 'fr2.json')] : null
+    cacheDir ? [join(cacheDir, 'fr1.json'), join(cacheDir, 'fr2.json')] : null,
+    'prints'
   );
 
   const frByOracle = new Map();
