@@ -132,7 +132,7 @@ export default function App() {
     >
       <div className="board-column">
         <PlayerBar
-          name="Adversaire"
+          name={state.enemyName ?? 'Adversaire'}
           player={bot}
           side="bot"
           faceTargetable={targeting.botFace}

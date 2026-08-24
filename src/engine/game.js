@@ -1,10 +1,13 @@
-// Cœur du moteur de combat (POC — Jalon 1).
+// Cœur du moteur de combat.
 // Aucun import React : ce module est testable indépendamment de l'interface.
+//
+// Depuis le Jalon 2, le combat est paramétré par le run (deck, PV courants,
+// rencontre ennemie, plafond de mana, paramètres de pioche) au lieu de valeurs
+// fixes. Voir src/engine/run.js pour l'état de run qui l'enveloppe.
 //
 // Convention : les fonctions publiques (createGame, playCard, attack, endTurn)
 // ne modifient jamais l'état reçu ; elles renvoient un nouvel état (clone).
-// Les fonctions internes (préfixe minuscule, non exportées sauf besoin de test)
-// mutent un état de travail déjà cloné.
+// Les fonctions internes mutent un état de travail déjà cloné.
 
 import {
   STARTING_HP,
@@ -27,7 +30,6 @@ import {
 } from './selectors.js';
 
 const clone = (state) => structuredClone(state);
-const opponentOf = (player) => (player === 'player' ? 'bot' : 'player');
 const label = (player) => (player === 'player' ? 'Vous' : 'Le bot');
 
 function log(state, text) {
@@ -38,9 +40,11 @@ function log(state, text) {
   });
 }
 
-function newPlayerState(deck) {
+function newPlayerState(deck, { hp, maxHp, manaCap }) {
   return {
-    hp: STARTING_HP,
+    hp,
+    maxHp,
+    manaCap,
     mana: 0,
     maxMana: 0,
     turnsTaken: 0,
@@ -54,17 +58,19 @@ function newPlayerState(deck) {
 
 // Transforme une instance de carte (main) en créature posée sur le champ de bataille.
 export function makeBoardCreature(card, controller) {
+  const keywords = [...(card.keywords ?? [])];
   return {
     instanceId: card.instanceId,
     cardId: card.cardId,
     name: card.name,
     controller,
-    keywords: [...(card.keywords ?? [])],
+    keywords,
     basePower: card.power,
     baseToughness: card.toughness,
     markedDamage: 0,
     tempBuffs: [],
-    readyToAttack: false, // mal d'invocation : ne peut pas attaquer le tour où elle arrive
+    // Mal d'invocation, sauf Célérité qui permet d'attaquer immédiatement.
+    readyToAttack: keywords.includes(KEYWORDS.HASTE),
     hasAttacked: false,
   };
 }
@@ -90,24 +96,67 @@ function drawCards(state, player, n) {
   return drawn;
 }
 
+// Gain de PV (Lien de vie, soins…), borné aux PV max du joueur concerné.
+function gainHp(state, player, amount) {
+  if (amount <= 0) return;
+  const p = state.players[player];
+  p.hp = Math.min(p.hp + amount, p.maxHp);
+}
+
 // ---------------------------------------------------------------------------
 // Création de partie
 // ---------------------------------------------------------------------------
 
-export function createGame(cardDb, playerDeckList, botDeckList, rng = Math.random) {
+// setup = {
+//   playerDeck: [cardId...], enemyDeck: [cardId...],
+//   playerHp, playerMaxHp, enemyHp, enemyMaxHp,
+//   playerManaCap, enemyManaCap,
+//   enemyName,
+//   params: { startingHandSize, extraDrawsMax, extraDrawInterval }
+// }
+export function createGame(cardDb, setup, rng = Math.random) {
+  const {
+    playerDeck,
+    enemyDeck,
+    playerHp = STARTING_HP,
+    playerMaxHp = playerHp,
+    enemyHp = STARTING_HP,
+    enemyMaxHp = enemyHp,
+    playerManaCap = MANA_CAP,
+    enemyManaCap = MANA_CAP,
+    enemyName = 'Adversaire',
+    params = {},
+  } = setup;
+
+  const rules = {
+    startingHandSize: params.startingHandSize ?? STARTING_HAND_SIZE,
+    extraDrawsMax: params.extraDrawsMax ?? MAX_EXTRA_DRAWS,
+    extraDrawInterval: params.extraDrawInterval ?? EXTRA_DRAW_INTERVAL,
+  };
+
   const state = {
     status: 'playing', // 'playing' | 'victory' | 'defeat'
     activePlayer: 'player',
+    enemyName,
+    rules,
     players: {
-      player: newPlayerState(buildDeck(playerDeckList, cardDb, 'player', rng)),
-      bot: newPlayerState(buildDeck(botDeckList, cardDb, 'bot', rng)),
+      player: newPlayerState(buildDeck(playerDeck, cardDb, 'player', rng), {
+        hp: playerHp,
+        maxHp: playerMaxHp,
+        manaCap: playerManaCap,
+      }),
+      bot: newPlayerState(buildDeck(enemyDeck, cardDb, 'bot', rng), {
+        hp: enemyHp,
+        maxHp: enemyMaxHp,
+        manaCap: enemyManaCap,
+      }),
     },
     log: [],
   };
 
-  drawCards(state, 'player', STARTING_HAND_SIZE);
-  drawCards(state, 'bot', STARTING_HAND_SIZE);
-  log(state, 'Le combat commence — chaque camp pioche 7 cartes.');
+  drawCards(state, 'player', rules.startingHandSize);
+  drawCards(state, 'bot', rules.startingHandSize);
+  log(state, `Le combat commence — chaque camp pioche ${rules.startingHandSize} cartes.`);
 
   startTurn(state, 'player');
   return state;
@@ -122,20 +171,23 @@ function startTurn(state, player) {
   state.activePlayer = player;
   p.turnsTaken += 1;
 
-  // Mana : +1 par tour, plafonné.
-  p.maxMana = Math.min(p.turnsTaken, MANA_CAP);
+  // Mana : +1 par tour, plafonné par le plafond du camp.
+  p.maxMana = Math.min(p.turnsTaken, p.manaCap);
   p.mana = p.maxMana;
 
-  // Pioche supplémentaire tous les 2 tours (tours 3, 5, ...), plafonnée.
+  // Pioche supplémentaire tous les N tours (tours 3, 5, ...), plafonnée.
   if (
     p.turnsTaken >= 3 &&
-    (p.turnsTaken - 1) % EXTRA_DRAW_INTERVAL === 0 &&
-    p.extraDraws < MAX_EXTRA_DRAWS
+    (p.turnsTaken - 1) % state.rules.extraDrawInterval === 0 &&
+    p.extraDraws < state.rules.extraDrawsMax
   ) {
     const drawn = drawCards(state, player, 1);
     if (drawn > 0) {
       p.extraDraws += 1;
-      log(state, `${label(player)} pioche une carte (pioche ${p.extraDraws}/${MAX_EXTRA_DRAWS}).`);
+      log(
+        state,
+        `${label(player)} pioche une carte (pioche ${p.extraDraws}/${state.rules.extraDrawsMax}).`
+      );
     }
   }
 
@@ -170,9 +222,8 @@ function damageCreature(state, creature, amount, deathtouch) {
 }
 
 // Combat mutuel entre deux créatures (modèle façon Hearthstone : les deux
-// se frappent). Gère Piétinement (excédent au joueur) et Toucher mortel.
+// se frappent). Gère Piétinement, Toucher mortel et Lien de vie.
 function resolveCreatureCombat(state, attacker, defender) {
-  const attackerOwner = state.players[attacker.controller];
   const defenderOwner = state.players[defender.controller];
 
   const atkPower = effectivePower(attacker);
@@ -186,6 +237,7 @@ function resolveCreatureCombat(state, attacker, defender) {
 
   // L'attaquant frappe la cible.
   damageCreature(state, defender, atkPower, atkDeathtouch);
+  if (hasKeyword(attacker, KEYWORDS.LIFELINK)) gainHp(state, attacker.controller, atkPower);
 
   // Piétinement : l'excédent au-delà du létal passe au joueur adverse.
   if (hasKeyword(attacker, KEYWORDS.TRAMPLE) && isDead(defender)) {
@@ -195,17 +247,22 @@ function resolveCreatureCombat(state, attacker, defender) {
 
   // La cible riposte (pas de piétinement en défense).
   damageCreature(state, attacker, defPower, defDeathtouch);
+  if (hasKeyword(defender, KEYWORDS.LIFELINK)) gainHp(state, defender.controller, defPower);
 
   log(
     state,
     `${attacker.name} (${atkPower}/${effectiveToughness(attacker)}) affronte ${defender.name} (${defPower}/${effectiveToughness(defender)}).`
   );
 
-  // Suppression des morts (log spécifique).
   if (isDead(defender)) log(state, `${defender.name} est détruite.`);
   if (isDead(attacker)) log(state, `${attacker.name} est détruite.`);
+}
 
-  void attackerOwner; // conservé pour lisibilité symétrique
+// Attaque directe d'un joueur (visage), avec Lien de vie.
+function attackPlayer(state, attacker, targetPlayer) {
+  const power = effectivePower(attacker);
+  state.players[targetPlayer].hp -= power;
+  if (hasKeyword(attacker, KEYWORDS.LIFELINK)) gainHp(state, attacker.controller, power);
 }
 
 // Déplace toutes les créatures mortes vers leur cimetière respectif.
@@ -238,7 +295,7 @@ function checkGameEnd(state) {
 function checkResourceDefeat(state) {
   if (state.status !== 'playing') return;
   const p = state.players.player;
-  if (p.hand.length === 0 && p.extraDraws >= MAX_EXTRA_DRAWS) {
+  if (p.hand.length === 0 && p.extraDraws >= state.rules.extraDrawsMax) {
     state.status = 'defeat';
     log(state, 'Défaite : votre main est vide après toutes les pioches.');
   }
@@ -323,12 +380,12 @@ export function attack(state, attackerId, target) {
 
   if (target.type === 'player') {
     // Le joueur peut viser l'adversaire directement même s'il reste des créatures.
-    s.players.bot.hp -= effectivePower(attacker);
+    attackPlayer(s, attacker, 'bot');
     log(s, `${attacker.name} attaque l'adversaire pour ${effectivePower(attacker)}.`);
   } else if (target.type === 'creature') {
     const defender = s.players.bot.board.find((c) => c.instanceId === target.instanceId);
     if (!defender) return state;
-    if (!canBeAttackedBy(defender, attacker)) return state; // règle de Vol
+    if (!canBeAttackedBy(defender, attacker)) return state; // règle de Vol / Portée
     resolveCreatureCombat(s, attacker, defender);
   } else {
     return state;
@@ -355,6 +412,15 @@ export function endTurn(state) {
   startTurn(s, 'player');
   checkResourceDefeat(s);
   return s;
+}
+
+// Résultat exploitable par la couche run. null tant que le combat est en cours.
+export function getCombatResult(state) {
+  if (state.status === 'playing') return null;
+  return {
+    outcome: state.status === 'victory' ? 'win' : 'loss',
+    playerHpAfter: Math.max(0, state.players.player.hp),
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -415,9 +481,7 @@ function runBotTurn(state, rng = Math.random) {
   }
 
   // 3) Buff : renforcer sa plus grosse créature prête à attaquer.
-  const buffSpells = bot.hand.filter(
-    (c) => c.type === CARD_TYPES.SORCERY && c.effect === 'buff'
-  );
+  const buffSpells = bot.hand.filter((c) => c.type === CARD_TYPES.SORCERY && c.effect === 'buff');
   for (const spell of buffSpells) {
     if (spell.cost > bot.mana) continue;
     const attackers = bot.board
@@ -435,14 +499,13 @@ function runBotTurn(state, rng = Math.random) {
     (c) => c.readyToAttack && !c.hasAttacked && effectivePower(c) > 0
   );
   for (const attacker of readyAttackers) {
-    // Recalcul à chaque attaque : le plateau change au fil des morts.
     if (hero.board.length > 0) {
       const reachable = hero.board.filter((d) => canBeAttackedBy(d, attacker));
       if (reachable.length === 0) continue; // ne peut atteindre aucune créature, ni le joueur
       const defender = pickRandom(reachable, rng);
       resolveCreatureCombat(state, attacker, defender);
     } else {
-      hero.hp -= effectivePower(attacker);
+      attackPlayer(state, attacker, 'player');
       log(state, `${attacker.name} attaque le joueur pour ${effectivePower(attacker)}.`);
     }
     attacker.hasAttacked = true;
@@ -465,4 +528,5 @@ export const _internals = {
   runBotTurn,
   checkGameEnd,
   checkResourceDefeat,
+  gainHp,
 };

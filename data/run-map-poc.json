@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "category": "run_map",
+    "description": "Structure des 3 niveaux du run MVP (façon Slay the Spire). Chaque niveau : rangées de nœuds + arêtes (chemin à embranchements) + boss fixe. Les nœuds combat/event tirent au hasard dans les pools du niveau.",
+    "balance_notes": "Difficulté croissante : le pool de combats et les PV/decks de boss montent de niveau en niveau."
+  },
+  "levels": [
+    {
+      "id": 1,
+      "boss": "warren_matriarch",
+      "combat_pool": ["aggro_red", "flyers_blue", "midrange_green"],
+      "event_pool": ["healing_spring", "traveling_pedlar"],
+      "rows": [
+        [{ "id": "1a", "type": "combat" }],
+        [{ "id": "2a", "type": "combat" }, { "id": "2b", "type": "event" }],
+        [{ "id": "3a", "type": "shop" }, { "id": "3b", "type": "combat" }],
+        [{ "id": "boss", "type": "boss" }]
+      ],
+      "edges": [["1a", "2a"], ["1a", "2b"], ["2a", "3a"], ["2a", "3b"], ["2b", "3b"], ["3a", "boss"], ["3b", "boss"]]
+    },
+    {
+      "id": 2,
+      "boss": "storm_tyrant",
+      "combat_pool": ["aggro_red", "flyers_blue", "midrange_green", "deathtouch_black"],
+      "event_pool": ["healing_spring", "ancient_shrine", "traveling_pedlar"],
+      "rows": [
+        [{ "id": "1a", "type": "combat" }],
+        [{ "id": "2a", "type": "combat" }, { "id": "2b", "type": "event" }],
+        [{ "id": "3a", "type": "combat" }, { "id": "3b", "type": "shop" }],
+        [{ "id": "4a", "type": "event" }, { "id": "4b", "type": "combat" }],
+        [{ "id": "boss", "type": "boss" }]
+      ],
+      "edges": [["1a", "2a"], ["1a", "2b"], ["2a", "3a"], ["2a", "3b"], ["2b", "3a"], ["2b", "3b"], ["3a", "4a"], ["3a", "4b"], ["3b", "4b"], ["4a", "boss"], ["4b", "boss"]]
+    },
+    {
+      "id": 3,
+      "boss": "the_devourer",
+      "combat_pool": ["aggro_red", "flyers_blue", "midrange_green", "deathtouch_black"],
+      "event_pool": ["healing_spring", "ancient_shrine"],
+      "rows": [
+        [{ "id": "1a", "type": "combat" }],
+        [{ "id": "2a", "type": "combat" }, { "id": "2b", "type": "combat" }],
+        [{ "id": "3a", "type": "shop" }, { "id": "3b", "type": "event" }],
+        [{ "id": "4a", "type": "combat" }, { "id": "4b", "type": "combat" }],
+        [{ "id": "boss", "type": "boss" }]
+      ],
+      "edges": [["1a", "2a"], ["1a", "2b"], ["2a", "3a"], ["2a", "3b"], ["2b", "3a"], ["2b", "3b"], ["3a", "4a"], ["3b", "4a"], ["3b", "4b"], ["4a", "boss"], ["4b", "boss"]]
+    }
+  ]
+}

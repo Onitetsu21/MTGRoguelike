@@ -49,9 +49,14 @@ export function canAttack(state, player, instanceId) {
   return c.readyToAttack && !c.hasAttacked && effectivePower(c) > 0;
 }
 
-// Règle de Vol : une créature avec Vol ne peut être attaquée que par une créature avec Vol.
+// Règle de Vol : une créature avec Vol ne peut être attaquée que par une créature
+// avec Vol ou Portée (Portée = contre-jeu au Vol).
 export function canBeAttackedBy(defender, attacker) {
-  if (hasKeyword(defender, KEYWORDS.FLYING) && !hasKeyword(attacker, KEYWORDS.FLYING)) {
+  if (
+    hasKeyword(defender, KEYWORDS.FLYING) &&
+    !hasKeyword(attacker, KEYWORDS.FLYING) &&
+    !hasKeyword(attacker, KEYWORDS.REACH)
+  ) {
     return false;
   }
   return true;

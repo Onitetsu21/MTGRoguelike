@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "category": "balance",
+    "description": "Knobs centraux de balance du run MVP (Jalon 2). Modifier ces valeurs suffit à ré-équilibrer sans toucher au code.",
+    "balance_notes": "PV de run façon Slay the Spire (courants persistants). Combat : paramètres hérités du POC validé (main 7, 2 pioches suppl.)."
+  },
+  "run": {
+    "starting_max_hp": 100,
+    "starting_gold": 0,
+    "starting_mana_cap": 5,
+    "mana_cap_hard_max": 8,
+    "combat_loss_maxhp_penalty": 20
+  },
+  "combat": {
+    "starting_hand_size": 7,
+    "mana_start": 1,
+    "extra_draws_max": 2,
+    "extra_draw_interval": 2,
+    "enemy_default_mana_cap": 5
+  },
+  "draft": {
+    "num_boosters": 4,
+    "booster_size": 8,
+    "picks_per_booster": 3,
+    "rarity_weights": { "common": 6, "uncommon": 3, "rare": 1 }
+  },
+  "shop": {
+    "cards_offered": 4
+  },
+  "consolation": {
+    "num_colors": 2,
+    "num_choices": 3
+  },
+  "rewards": {
+    "gold_combat_by_level": [30, 40, 55],
+    "gold_boss_by_level": [60, 80, 110]
+  }
+}

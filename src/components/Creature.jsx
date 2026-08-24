@@ -4,6 +4,9 @@ const KEYWORD_ICONS = {
   flying: { icon: '🕊', label: 'Vol' },
   trample: { icon: '🐾', label: 'Piétinement' },
   deathtouch: { icon: '☠', label: 'Toucher mortel' },
+  lifelink: { icon: '✚', label: 'Lien de vie' },
+  haste: { icon: '⚡', label: 'Célérité' },
+  reach: { icon: '🏹', label: 'Portée' },
 };
 
 // Créature posée sur le champ de bataille.

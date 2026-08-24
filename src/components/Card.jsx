@@ -4,6 +4,9 @@ const KEYWORD_LABELS = {
   flying: 'Vol',
   trample: 'Piétinement',
   deathtouch: 'Toucher mortel',
+  lifelink: 'Lien de vie',
+  haste: 'Célérité',
+  reach: 'Portée',
 };
 
 // Carte de la main du joueur.
