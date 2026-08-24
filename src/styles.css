@@ -631,7 +631,7 @@ body {
 .mtg-card {
   --frame: #c9cdd6;
   --frame-dark: #8a8f99;
-  width: 150px;
+  width: 208px;
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
@@ -687,23 +687,24 @@ body {
 .mtg-name {
   flex: 1;
   min-width: 0;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.12;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   color: #14120c;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 .mtg-cost {
   flex: 0 0 auto;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
   color: #0c0c0c;
   background: #efe6cf;
@@ -720,8 +721,8 @@ body {
 /* Cartouche d'illustration */
 .mtg-art {
   position: relative;
-  height: 78px;
-  margin: 5px 0 0;
+  height: 112px;
+  margin: 6px 0 0;
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 5px;
   overflow: hidden;
@@ -738,7 +739,7 @@ body {
   object-fit: cover;
 }
 .mtg-art-glyph {
-  font-size: 34px;
+  font-size: 52px;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
 }
 
@@ -747,9 +748,9 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 4px;
-  margin-top: 5px;
-  padding: 2px 6px;
-  font-size: 9.5px;
+  margin-top: 6px;
+  padding: 3px 7px;
+  font-size: 11px;
   font-weight: 700;
   border-radius: 5px;
   background: linear-gradient(180deg, var(--frame), var(--frame-dark));
@@ -776,23 +777,23 @@ body {
 
 .mtg-textbox {
   flex: 1;
-  margin-top: 5px;
-  padding: 5px 6px;
-  min-height: 40px;
+  margin-top: 6px;
+  padding: 7px 8px;
+  min-height: 62px;
   border-radius: 5px;
   background: rgba(255, 252, 240, 0.75);
   border: 1px solid rgba(0, 0, 0, 0.18);
-  font-size: 10px;
-  line-height: 1.25;
+  font-size: 12px;
+  line-height: 1.3;
 }
 .mtg-keywords { margin: 0 0 2px; font-weight: 800; color: #3a2f12; }
 .mtg-rules { margin: 0; color: #2a2a2a; }
 
 .mtg-pt {
   align-self: flex-end;
-  margin-top: 5px;
-  padding: 1px 9px;
-  font-size: 14px;
+  margin-top: 6px;
+  padding: 2px 12px;
+  font-size: 18px;
   font-weight: 900;
   color: #14120c;
   background: linear-gradient(180deg, var(--frame), var(--frame-dark));
@@ -808,7 +809,7 @@ body {
 }
 
 /* La main réutilise le cadre : ajuster la hauteur du bandeau */
-.hand { min-height: 214px; align-items: stretch; }
+.hand { min-height: 320px; align-items: stretch; }
 
 /* ---- Créatures (jeton compact façon carte) — surcharge du POC ---- */
 .creature {

@@ -13,10 +13,16 @@ import { shuffle } from '../engine/rng.js';
 
 const stripMeta = ({ _meta, ...rest }) => rest;
 
-// --- Fusion du pool (import auto + overrides manuels) ----------------------
+// Enrichissement LOCAL optionnel (texte de règles + illustrations, git-ignoré).
+// Absent par défaut : import.meta.glob renvoie {} et on garde la base seule.
+const localGlob = import.meta.glob('../../data/cards-bloomburrow.local.json', { eager: true });
+const localCards = Object.values(localGlob)[0]?.cards ?? {};
+
+// --- Fusion du pool (import auto + overrides manuels + enrichissement local) --
 function buildCardDb() {
   const db = {};
   for (const c of cardsBlb.cards) db[c.id] = c;
+  for (const [id, extra] of Object.entries(localCards)) db[id] = { ...(db[id] ?? {}), ...extra };
   for (const o of overrides.cards) db[o.id] = { ...(db[o.id] ?? {}), ...o }; // patch ou ajout
   return db;
 }

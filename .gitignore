@@ -8,3 +8,6 @@ coverage
 
 # Illustrations de cartes téléchargées en local (copyright, non distribuées)
 public/art/
+
+# Enrichissement local des cartes (texte de règles/illustrations — droits d'auteur)
+data/cards-bloomburrow.local.json

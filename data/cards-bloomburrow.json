@@ -3,7 +3,7 @@
     "version": "1.0",
     "category": "cards",
     "source": "Scryfall set:blb (import auto — créatures ; mots-clés évergreens mappés)",
-    "description": "Import hybride Bloomburrow. Créatures avec stats/mots-clés/couleurs/nom FR + tag archétype. Les capacités spéciales viennent de cards-bloomburrow-overrides.json.",
+    "description": "Base commitée : stats/mots-clés/couleurs/nom FR + tag archétype. Le texte de règles et les illustrations (droits d'auteur) sont générés en local dans cards-bloomburrow.local.json (git-ignoré) et fusionnés au chargement.",
     "keyword_labels_fr": {
       "flying": "Vol",
       "trample": "Piétinement",

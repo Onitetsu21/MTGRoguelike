@@ -15,7 +15,8 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const OUT = join(__dirname, '..', 'data', 'cards-bloomburrow.json');
+const OUT = join(__dirname, '..', 'data', 'cards-bloomburrow.json'); // base (commité)
+const LOCAL = join(__dirname, '..', 'data', 'cards-bloomburrow.local.json'); // enrichissement (git-ignoré)
 const ART_DIR = join(__dirname, '..', 'public', 'art'); // git-ignoré
 
 // Scryfall keyword (EN) -> mot-clé supporté par notre moteur.
@@ -93,7 +94,7 @@ async function fetchPages(query, cacheFiles, unique = 'cards') {
   return out;
 }
 
-function toCard(en, frName) {
+function toCard(en, fr) {
   const numeric = (v) => /^-?\d+$/.test(String(v));
   if (!numeric(en.power) || !numeric(en.toughness)) return null; // */X non supporté
   const keywords = (en.keywords ?? []).map((k) => KEYWORD_MAP[k]).filter(Boolean);
@@ -102,7 +103,7 @@ function toCard(en, frName) {
   const text = uniqKw.map((k) => KEYWORD_LABELS_FR[k]).join(', ');
   return {
     id: snake(en.name),
-    name: frName || en.name,
+    name: fr?.name || en.name,
     name_en: en.name,
     type: 'creature',
     colors,
@@ -113,6 +114,8 @@ function toCard(en, frName) {
     archetypes: archetypesFor(colors),
     text: text ? `${text}.` : '',
     rarity: en.rarity === 'mythic' ? 'mythic' : en.rarity,
+    // Champs d'enrichissement local (non commités) : texte de règles + illustration.
+    _oracle: fr?.text ?? en.oracle_text ?? '',
     _artUrl: en.image_uris?.art_crop ?? en.card_faces?.[0]?.image_uris?.art_crop ?? null,
   };
 }
@@ -143,7 +146,9 @@ async function main() {
   );
 
   const frByOracle = new Map();
-  for (const c of fr) if (c.oracle_id && c.printed_name) frByOracle.set(c.oracle_id, c.printed_name);
+  for (const c of fr) {
+    if (c.oracle_id && c.printed_name) frByOracle.set(c.oracle_id, { name: c.printed_name, text: c.printed_text ?? '' });
+  }
 
   const creatures = en.filter(
     (c) => (c.type_line ?? '').includes('Creature') && !c.name.startsWith('A-') // exclut les variantes Arena rebalancées
@@ -158,21 +163,26 @@ async function main() {
   }
   cards.sort((a, b) => a.cost - b.cost || a.id.localeCompare(b.id));
 
-  // Option --art : télécharge les illustrations en local (git-ignorées).
+  // Enrichissement LOCAL (git-ignoré) : texte de règles imprimé + illustration.
+  // On ne met JAMAIS ce contenu (droits d'auteur) dans le JSON de base commité.
   const artMode = process.argv.includes('--art');
-  if (artMode) {
-    mkdirSync(ART_DIR, { recursive: true });
-    let ok = 0;
-    for (const c of cards) {
-      if (c._artUrl && (await downloadArt(c._artUrl, c.id))) {
-        c.art = `art/${c.id}.jpg`;
-        ok++;
-      }
+  if (artMode) mkdirSync(ART_DIR, { recursive: true });
+  const local = {};
+  let art = 0;
+  for (const c of cards) {
+    const entry = {};
+    if (c._oracle) entry.oracle = c._oracle;
+    if (artMode && c._artUrl && (await downloadArt(c._artUrl, c.id))) {
+      entry.art = `art/${c.id}.jpg`;
+      art++;
       await new Promise((r) => setTimeout(r, 90)); // courtoisie Scryfall
     }
-    console.log(`Illustrations téléchargées : ${ok}/${cards.length} → public/art/`);
+    if (Object.keys(entry).length) local[c.id] = entry;
   }
-  for (const c of cards) delete c._artUrl;
+  for (const c of cards) {
+    delete c._oracle;
+    delete c._artUrl;
+  }
 
   const out = {
     _meta: {
@@ -180,7 +190,7 @@ async function main() {
       category: 'cards',
       source: 'Scryfall set:blb (import auto — créatures ; mots-clés évergreens mappés)',
       description:
-        'Import hybride Bloomburrow. Créatures avec stats/mots-clés/couleurs/nom FR + tag archétype. Les capacités spéciales viennent de cards-bloomburrow-overrides.json.',
+        'Base commitée : stats/mots-clés/couleurs/nom FR + tag archétype. Le texte de règles et les illustrations (droits d\'auteur) sont générés en local dans cards-bloomburrow.local.json (git-ignoré) et fusionnés au chargement.',
       keyword_labels_fr: KEYWORD_LABELS_FR,
       generated_at: new Date().toISOString().slice(0, 10),
       count: cards.length,
@@ -188,7 +198,12 @@ async function main() {
     cards,
   };
   writeFileSync(OUT, JSON.stringify(out, null, 2) + '\n');
+  writeFileSync(
+    LOCAL,
+    JSON.stringify({ _meta: { note: 'Enrichissement local (droits d\'auteur) — NE PAS committer.', generated_at: new Date().toISOString().slice(0, 10) }, cards: local }, null, 2) + '\n'
+  );
   console.log(`Écrit ${cards.length} créatures dans ${OUT}`);
+  console.log(`Enrichissement local : ${Object.keys(local).length} entrées (texte${artMode ? ` + ${art} illustrations` : ''}) → ${LOCAL}`);
 }
 
 main().catch((e) => {

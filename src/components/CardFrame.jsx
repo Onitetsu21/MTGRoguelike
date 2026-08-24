@@ -57,6 +57,11 @@ export default function CardFrame({ card, onClick, disabled, selected, targetabl
   if (targetable) classes.push('is-targetable');
 
   const keywordText = (card.keywords ?? []).map((k) => KEYWORD_LABELS[k] ?? k).join(', ');
+  // Texte de règles : oracle (enrichissement local) sinon texte auteur, en évitant
+  // de répéter la simple ligne de mots-clés déjà affichée.
+  const oracle = card.oracle || '';
+  const extraText =
+    !oracle && card.text && card.text.replace(/\.\s*$/, '') !== keywordText ? card.text : '';
 
   return (
     <div
@@ -99,7 +104,8 @@ export default function CardFrame({ card, onClick, disabled, selected, targetabl
 
       <div className="mtg-textbox">
         {keywordText && <p className="mtg-keywords">{keywordText}</p>}
-        {card.text && <p className="mtg-rules">{card.text}</p>}
+        {oracle && <p className="mtg-rules">{oracle}</p>}
+        {extraText && <p className="mtg-rules">{extraText}</p>}
       </div>
 
       {isCreature && (
