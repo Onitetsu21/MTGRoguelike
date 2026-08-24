@@ -17,7 +17,8 @@
     "mana_start": 1,
     "extra_draws_max": 2,
     "extra_draw_interval": 2,
-    "enemy_default_mana_cap": 5
+    "enemy_default_mana_cap": 5,
+    "max_turns": 40
   },
   "draft": {
     "num_boosters": 4,

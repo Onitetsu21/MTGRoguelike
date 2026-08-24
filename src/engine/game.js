@@ -132,6 +132,7 @@ export function createGame(cardDb, setup, rng = Math.random) {
     startingHandSize: params.startingHandSize ?? STARTING_HAND_SIZE,
     extraDrawsMax: params.extraDrawsMax ?? MAX_EXTRA_DRAWS,
     extraDrawInterval: params.extraDrawInterval ?? EXTRA_DRAW_INTERVAL,
+    maxTurns: params.maxTurns ?? Infinity, // garde-fou anti-blocage
   };
 
   const state = {
@@ -301,6 +302,16 @@ function checkResourceDefeat(state) {
   }
 }
 
+// Garde-fou anti-blocage : un combat qui n'aboutit jamais (ex. verrou volantes
+// vs créatures au sol, main figée) se solde par une défaite au-delà du plafond.
+function checkTurnLimit(state) {
+  if (state.status !== 'playing') return;
+  if (state.players.player.turnsTaken > state.rules.maxTurns) {
+    state.status = 'defeat';
+    log(state, `Défaite : combat interminable (plus de ${state.rules.maxTurns} tours).`);
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Rituels
 // ---------------------------------------------------------------------------
@@ -411,6 +422,7 @@ export function endTurn(state) {
 
   startTurn(s, 'player');
   checkResourceDefeat(s);
+  checkTurnLimit(s);
   return s;
 }
 

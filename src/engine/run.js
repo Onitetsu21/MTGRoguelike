@@ -148,6 +148,7 @@ export function buildCombatSetup(run, content) {
       startingHandSize: combat.starting_hand_size,
       extraDrawsMax: combat.extra_draws_max,
       extraDrawInterval: combat.extra_draw_interval,
+      maxTurns: combat.max_turns,
     },
   };
 }

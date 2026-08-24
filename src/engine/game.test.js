@@ -198,4 +198,11 @@ describe('conditions de fin & résultat', () => {
     const s = makeCombatState([{ id: 'bear' }], [{ id: 'bear' }]);
     expect(getCombatResult(s)).toBeNull();
   });
+
+  it('un combat qui traîne au-delà du plafond de tours est perdu (garde-fou)', () => {
+    // Bot inoffensif + plafond bas : le combat ne peut pas boucler indéfiniment.
+    let s = newGame(Array(20).fill('bear'), [], { playerHp: 100, playerMaxHp: 100, params: { maxTurns: 3 } });
+    for (let i = 0; i < 3; i++) s = endTurn(s);
+    expect(s.status).toBe('defeat');
+  });
 });
