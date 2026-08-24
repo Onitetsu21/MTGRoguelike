@@ -1,0 +1,154 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "category": "encounters",
+    "description": "Rencontres MVP : decks + PV des ennemis. Les ids de cartes référencent cards-poc.json. Remplace decks-poc.json du POC (le deck joueur vient désormais du draft).",
+    "balance_notes": "Balance PROVISOIRE (1re passe affinée en MVP-E). Contrainte clé : ~9 cartes vues par combat, donc les PV ennemis restent bas. Normaux : PV 20-24. Boss : PV 26-34, decks de 14-16 avec les meilleures cartes. IA = celle du POC ('default')."
+  },
+  "encounters": {
+    "aggro_red": {
+      "name": "Meute Griffe-braise",
+      "hp": 20,
+      "ai": "default",
+      "deck": [
+        "thornback_pup",
+        "thornback_pup",
+        "emberclaw_cub",
+        "emberclaw_cub",
+        "raging_charger",
+        "raging_charger",
+        "magma_brute",
+        "magma_brute",
+        "lightning_jolt",
+        "lightning_jolt",
+        "quick_strike",
+        "quick_strike"
+      ]
+    },
+    "flyers_blue": {
+      "name": "Nuée d'Azur",
+      "hp": 22,
+      "ai": "default",
+      "deck": [
+        "mist_sprite",
+        "mist_sprite",
+        "storm_raven",
+        "storm_raven",
+        "azure_drake",
+        "azure_drake",
+        "tempest_djinn",
+        "tempest_djinn",
+        "reef_defender",
+        "reef_defender",
+        "leviathan_tide",
+        "sparrow_scout"
+      ]
+    },
+    "midrange_green": {
+      "name": "Colosses des Halliers",
+      "hp": 24,
+      "ai": "default",
+      "deck": [
+        "thornwood_boar",
+        "thornwood_boar",
+        "giant_spider",
+        "giant_spider",
+        "bramble_brute",
+        "bramble_brute",
+        "ironhide_ox",
+        "ironhide_ox",
+        "dread_reaper",
+        "giant_growth",
+        "giant_growth",
+        "grave_stalker"
+      ]
+    },
+    "deathtouch_black": {
+      "name": "Cortège Venimeux",
+      "hp": 22,
+      "ai": "default",
+      "deck": [
+        "plague_rat",
+        "plague_rat",
+        "venom_stalker",
+        "venom_stalker",
+        "vampire_bat",
+        "vampire_bat",
+        "grave_stalker",
+        "grave_stalker",
+        "bloodfang_reaver",
+        "bloodfang_reaver",
+        "nightmare_fiend",
+        "dawn_cleric"
+      ]
+    }
+  },
+  "bosses": {
+    "warren_matriarch": {
+      "name": "Matriarche du Terrier",
+      "hp": 26,
+      "ai": "default",
+      "deck": [
+        "sparrow_scout",
+        "sparrow_scout",
+        "dawn_cleric",
+        "dawn_cleric",
+        "valiant_mouse",
+        "valiant_mouse",
+        "skyguard_falcon",
+        "skyguard_falcon",
+        "radiant_pegasus",
+        "rallying_cry",
+        "rallying_cry",
+        "thornwood_boar",
+        "ironhide_ox",
+        "giant_growth"
+      ]
+    },
+    "storm_tyrant": {
+      "name": "Tyran des Tempêtes",
+      "hp": 30,
+      "ai": "default",
+      "deck": [
+        "mist_sprite",
+        "mist_sprite",
+        "storm_raven",
+        "storm_raven",
+        "azure_drake",
+        "azure_drake",
+        "tempest_djinn",
+        "tempest_djinn",
+        "emberclaw_cub",
+        "raging_charger",
+        "magma_brute",
+        "lightning_jolt",
+        "lightning_jolt",
+        "quick_strike",
+        "quick_strike"
+      ]
+    },
+    "the_devourer": {
+      "name": "Le Dévoreur",
+      "hp": 34,
+      "ai": "default",
+      "deck": [
+        "nightmare_fiend",
+        "nightmare_fiend",
+        "dread_reaper",
+        "dread_reaper",
+        "bloodfang_reaver",
+        "bloodfang_reaver",
+        "bramble_brute",
+        "bramble_brute",
+        "ironhide_ox",
+        "ironhide_ox",
+        "venom_stalker",
+        "venom_stalker",
+        "vampire_bat",
+        "grave_stalker",
+        "giant_growth",
+        "giant_growth"
+      ]
+    }
+  }
+}

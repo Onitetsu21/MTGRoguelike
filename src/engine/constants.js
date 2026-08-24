@@ -8,9 +8,12 @@ export const MAX_EXTRA_DRAWS = 2; // pioches supplémentaires max (=> 9 cartes v
 export const EXTRA_DRAW_INTERVAL = 2; // +1 carte tous les 2 tours
 
 export const KEYWORDS = {
-  FLYING: 'flying', // Vol : ne peut être attaqué que par une créature avec Vol
+  FLYING: 'flying', // Vol : ne peut être attaqué que par une créature avec Vol ou Portée
   TRAMPLE: 'trample', // Piétinement : l'excédent de dégâts létaux passe au joueur adverse
   DEATHTOUCH: 'deathtouch', // Toucher mortel : 1 dégât suffit à détruire la créature touchée
+  LIFELINK: 'lifelink', // Lien de vie : les dégâts infligés soignent le contrôleur
+  HASTE: 'haste', // Célérité : peut attaquer le tour où elle arrive
+  REACH: 'reach', // Portée : peut attaquer les créatures avec Vol
 };
 
 export const CARD_TYPES = {

@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "category": "shop",
+    "description": "Prix de la boutique du run MVP. Tout est configurable ici.",
+    "balance_notes": "Or gagné ~30-55/combat (cf balance-poc.json » rewards). Une carte commune ≈ 1 combat, une rare ≈ 2-3 combats."
+  },
+  "card_prices": { "common": 40, "uncommon": 75, "rare": 120 },
+  "booster": { "price": 60, "cards_shown": 3, "picks": 1 },
+  "mana_cap_upgrade": { "base_price": 80, "price_increment": 40 },
+  "heal": { "hp_per_purchase": 10, "price": 30 }
+}

@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "category": "events",
+    "description": "Événements simples de la carte de run (MVP). La logique de résolution arrive à l'étape MVP-D ; la donnée est définie ici dès maintenant.",
+    "balance_notes": "Effets ponctuels et lisibles. Le soin est la principale source de PV hors boutique (cf GAME_DESIGN : PV regagnables uniquement via événements/lieux dédiés)."
+  },
+  "events": {
+    "healing_spring": {
+      "name": "Source Guérisseuse",
+      "effect": "heal",
+      "amount": 25,
+      "text": "Vous vous reposez à la source. Regagnez 25 PV (dans la limite de vos PV max)."
+    },
+    "ancient_shrine": {
+      "name": "Sanctuaire Ancien",
+      "effect": "mana_cap",
+      "amount": 1,
+      "text": "Une énergie antique vous imprègne. Plafond de mana +1 pour le reste du run."
+    },
+    "traveling_pedlar": {
+      "name": "Colporteur Errant",
+      "effect": "gold",
+      "amount": 50,
+      "text": "Un marchand vous rachète quelques babioles. Gagnez 50 or."
+    }
+  }
+}

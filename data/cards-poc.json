@@ -1,150 +1,53 @@
 {
   "_meta": {
-    "version": "1.0",
+    "version": "2.0",
     "category": "cards",
-    "description": "Cartes de test POC — pas de vraies cartes Magic, uniquement pour valider la boucle de combat",
-    "balance_notes": "Force + Endurance combinées ≈ coût * 3, réparties selon le rôle de la carte (agressif = plus de Force, défensif = plus d'Endurance). Les créatures à mot-clé (Vol / Piétinement / Toucher mortel) reçoivent un léger malus de stats pour compenser la valeur du mot-clé."
+    "description": "Pool de cartes MVP (Jalon 2) — cartes de test maison, pas d'import Scryfall. ~30 cartes réparties sur les 5 couleurs pour le draft et le lot de consolation.",
+    "balance_notes": "Force + Endurance ≈ coût × 3 pour une créature vanille. Chaque mot-clé applique une décote de ~1-2 points sur ce budget (2 mots-clés = décote double). Couleurs : W=vol/lien de vie/petites créatures, U=évasion/tempo, B=toucher mortel/drain, R=agro/célérité/brûlure, G=grosses créatures/piétinement/portée.",
+    "keywords_supported": ["flying", "trample", "deathtouch", "lifelink", "haste", "reach"],
+    "keyword_labels_fr": {
+      "flying": "Vol",
+      "trample": "Piétinement",
+      "deathtouch": "Toucher mortel",
+      "lifelink": "Lien de vie",
+      "haste": "Célérité",
+      "reach": "Portée"
+    }
   },
   "cards": [
-    {
-      "id": "sparrow_scout",
-      "name": "Éclaireuse Moineau",
-      "type": "creature",
-      "cost": 1,
-      "power": 1,
-      "toughness": 1,
-      "keywords": ["flying"],
-      "text": "Vol.",
-      "rarity": "common"
-    },
-    {
-      "id": "thornback_pup",
-      "name": "Chiot des Ronces",
-      "type": "creature",
-      "cost": 1,
-      "power": 2,
-      "toughness": 1,
-      "keywords": [],
-      "text": "Une petite bête agressive.",
-      "rarity": "common"
-    },
-    {
-      "id": "venom_stalker",
-      "name": "Traqueur Venimeux",
-      "type": "creature",
-      "cost": 2,
-      "power": 1,
-      "toughness": 3,
-      "keywords": ["deathtouch"],
-      "text": "Toucher mortel.",
-      "rarity": "uncommon"
-    },
-    {
-      "id": "mossback_turtle",
-      "name": "Tortue Moussue",
-      "type": "creature",
-      "cost": 2,
-      "power": 1,
-      "toughness": 5,
-      "keywords": [],
-      "text": "Un mur patient.",
-      "rarity": "common"
-    },
-    {
-      "id": "wild_charger",
-      "name": "Chargeuse Sauvage",
-      "type": "creature",
-      "cost": 2,
-      "power": 3,
-      "toughness": 3,
-      "keywords": [],
-      "text": "Fonce sans réfléchir.",
-      "rarity": "common"
-    },
-    {
-      "id": "skyfang_hawk",
-      "name": "Faucon Croc-du-Ciel",
-      "type": "creature",
-      "cost": 3,
-      "power": 3,
-      "toughness": 2,
-      "keywords": ["flying"],
-      "text": "Vol.",
-      "rarity": "common"
-    },
-    {
-      "id": "bramble_brute",
-      "name": "Brute des Ronces",
-      "type": "creature",
-      "cost": 3,
-      "power": 4,
-      "toughness": 3,
-      "keywords": ["trample"],
-      "text": "Piétinement.",
-      "rarity": "uncommon"
-    },
-    {
-      "id": "ironhide_ox",
-      "name": "Bœuf Cuirassé",
-      "type": "creature",
-      "cost": 4,
-      "power": 4,
-      "toughness": 6,
-      "keywords": [],
-      "text": "Difficile à abattre.",
-      "rarity": "uncommon"
-    },
-    {
-      "id": "gale_griffin",
-      "name": "Griffon des Bourrasques",
-      "type": "creature",
-      "cost": 4,
-      "power": 4,
-      "toughness": 4,
-      "keywords": ["flying"],
-      "text": "Vol.",
-      "rarity": "rare"
-    },
-    {
-      "id": "dread_reaper",
-      "name": "Faucheur Redouté",
-      "type": "creature",
-      "cost": 5,
-      "power": 6,
-      "toughness": 7,
-      "keywords": ["trample"],
-      "text": "Piétinement.",
-      "rarity": "rare"
-    },
-    {
-      "id": "lightning_jolt",
-      "name": "Secousse Foudroyante",
-      "type": "sorcery",
-      "cost": 1,
-      "effect": "deal_damage",
-      "value": 2,
-      "text": "Inflige 2 dégâts à une créature ou un joueur ciblé.",
-      "rarity": "common"
-    },
-    {
-      "id": "quick_strike",
-      "name": "Frappe Rapide",
-      "type": "sorcery",
-      "cost": 2,
-      "effect": "deal_damage",
-      "value": 3,
-      "text": "Inflige 3 dégâts à une créature ou un joueur ciblé.",
-      "rarity": "common"
-    },
-    {
-      "id": "titans_might",
-      "name": "Vigueur du Titan",
-      "type": "sorcery",
-      "cost": 2,
-      "effect": "buff",
-      "buff": { "power": 2, "toughness": 2, "duration": "turn" },
-      "text": "Une créature que vous contrôlez gagne +2/+2 jusqu'à la fin du tour.",
-      "rarity": "common"
-    }
+    { "id": "sparrow_scout", "name": "Éclaireuse Moineau", "type": "creature", "colors": ["W"], "cost": 1, "power": 1, "toughness": 1, "keywords": ["flying"], "text": "Vol.", "rarity": "common" },
+    { "id": "dawn_cleric", "name": "Clerc de l'Aube", "type": "creature", "colors": ["W"], "cost": 2, "power": 1, "toughness": 3, "keywords": ["lifelink"], "text": "Lien de vie.", "rarity": "common" },
+    { "id": "valiant_mouse", "name": "Souris Vaillante", "type": "creature", "colors": ["W"], "cost": 2, "power": 2, "toughness": 3, "keywords": [], "text": "Une petite combattante tenace.", "rarity": "common" },
+    { "id": "skyguard_falcon", "name": "Faucon Gardeciel", "type": "creature", "colors": ["W"], "cost": 3, "power": 3, "toughness": 2, "keywords": ["flying"], "text": "Vol.", "rarity": "uncommon" },
+    { "id": "radiant_pegasus", "name": "Pégase Radieux", "type": "creature", "colors": ["W"], "cost": 4, "power": 3, "toughness": 5, "keywords": ["flying", "lifelink"], "text": "Vol, lien de vie.", "rarity": "rare" },
+    { "id": "rallying_cry", "name": "Cri de Ralliement", "type": "sorcery", "colors": ["W"], "cost": 2, "effect": "buff", "buff": { "power": 2, "toughness": 2, "duration": "turn" }, "text": "Une créature que vous contrôlez gagne +2/+2 jusqu'à la fin du tour.", "rarity": "common" },
+
+    { "id": "mist_sprite", "name": "Lutin des Brumes", "type": "creature", "colors": ["U"], "cost": 1, "power": 1, "toughness": 2, "keywords": ["flying"], "text": "Vol.", "rarity": "common" },
+    { "id": "reef_defender", "name": "Gardien du Récif", "type": "creature", "colors": ["U"], "cost": 2, "power": 1, "toughness": 4, "keywords": [], "text": "Un mur d'écume.", "rarity": "common" },
+    { "id": "storm_raven", "name": "Corbeau des Tempêtes", "type": "creature", "colors": ["U"], "cost": 3, "power": 3, "toughness": 2, "keywords": ["flying"], "text": "Vol.", "rarity": "common" },
+    { "id": "azure_drake", "name": "Drakônion d'Azur", "type": "creature", "colors": ["U"], "cost": 4, "power": 3, "toughness": 4, "keywords": ["flying"], "text": "Vol.", "rarity": "uncommon" },
+    { "id": "tempest_djinn", "name": "Djinn des Tempêtes", "type": "creature", "colors": ["U"], "cost": 4, "power": 4, "toughness": 3, "keywords": ["flying"], "text": "Vol.", "rarity": "uncommon" },
+    { "id": "leviathan_tide", "name": "Léviathan des Marées", "type": "creature", "colors": ["U"], "cost": 5, "power": 4, "toughness": 7, "keywords": [], "text": "Une masse des abysses.", "rarity": "rare" },
+
+    { "id": "plague_rat", "name": "Rat Pestiféré", "type": "creature", "colors": ["B"], "cost": 2, "power": 1, "toughness": 2, "keywords": ["deathtouch"], "text": "Toucher mortel.", "rarity": "common" },
+    { "id": "venom_stalker", "name": "Traqueur Venimeux", "type": "creature", "colors": ["B"], "cost": 2, "power": 1, "toughness": 3, "keywords": ["deathtouch"], "text": "Toucher mortel.", "rarity": "common" },
+    { "id": "vampire_bat", "name": "Chauve-souris Vampire", "type": "creature", "colors": ["B"], "cost": 3, "power": 2, "toughness": 2, "keywords": ["flying", "lifelink"], "text": "Vol, lien de vie.", "rarity": "uncommon" },
+    { "id": "grave_stalker", "name": "Rôdeur des Tombes", "type": "creature", "colors": ["B"], "cost": 3, "power": 3, "toughness": 3, "keywords": [], "text": "Il traîne où l'on meurt.", "rarity": "common" },
+    { "id": "bloodfang_reaver", "name": "Pillard Crocsang", "type": "creature", "colors": ["B"], "cost": 4, "power": 4, "toughness": 3, "keywords": ["lifelink"], "text": "Lien de vie.", "rarity": "uncommon" },
+    { "id": "nightmare_fiend", "name": "Démon Cauchemar", "type": "creature", "colors": ["B"], "cost": 5, "power": 5, "toughness": 6, "keywords": ["deathtouch"], "text": "Toucher mortel.", "rarity": "rare" },
+
+    { "id": "thornback_pup", "name": "Chiot des Ronces", "type": "creature", "colors": ["R"], "cost": 1, "power": 2, "toughness": 1, "keywords": [], "text": "Une petite bête agressive.", "rarity": "common" },
+    { "id": "emberclaw_cub", "name": "Petit Griffe-braise", "type": "creature", "colors": ["R"], "cost": 2, "power": 3, "toughness": 1, "keywords": ["haste"], "text": "Célérité.", "rarity": "common" },
+    { "id": "raging_charger", "name": "Chargeur Enragé", "type": "creature", "colors": ["R"], "cost": 3, "power": 4, "toughness": 2, "keywords": ["haste"], "text": "Célérité.", "rarity": "uncommon" },
+    { "id": "magma_brute", "name": "Brute de Magma", "type": "creature", "colors": ["R"], "cost": 4, "power": 5, "toughness": 3, "keywords": ["trample"], "text": "Piétinement.", "rarity": "uncommon" },
+    { "id": "lightning_jolt", "name": "Secousse Foudroyante", "type": "sorcery", "colors": ["R"], "cost": 1, "effect": "deal_damage", "value": 2, "text": "Inflige 2 dégâts à une créature ou un joueur ciblé.", "rarity": "common" },
+    { "id": "quick_strike", "name": "Frappe Rapide", "type": "sorcery", "colors": ["R"], "cost": 2, "effect": "deal_damage", "value": 3, "text": "Inflige 3 dégâts à une créature ou un joueur ciblé.", "rarity": "common" },
+
+    { "id": "thornwood_boar", "name": "Sanglier des Halliers", "type": "creature", "colors": ["G"], "cost": 2, "power": 3, "toughness": 2, "keywords": [], "text": "Fonce dans le tas.", "rarity": "common" },
+    { "id": "giant_spider", "name": "Araignée Géante", "type": "creature", "colors": ["G"], "cost": 3, "power": 2, "toughness": 4, "keywords": ["reach"], "text": "Portée.", "rarity": "common" },
+    { "id": "bramble_brute", "name": "Brute des Ronces", "type": "creature", "colors": ["G"], "cost": 3, "power": 4, "toughness": 3, "keywords": ["trample"], "text": "Piétinement.", "rarity": "uncommon" },
+    { "id": "ironhide_ox", "name": "Bœuf Cuirassé", "type": "creature", "colors": ["G"], "cost": 4, "power": 4, "toughness": 6, "keywords": [], "text": "Difficile à abattre.", "rarity": "uncommon" },
+    { "id": "dread_reaper", "name": "Faucheur Redouté", "type": "creature", "colors": ["G"], "cost": 5, "power": 6, "toughness": 7, "keywords": ["trample"], "text": "Piétinement.", "rarity": "rare" },
+    { "id": "giant_growth", "name": "Croissance Sauvage", "type": "sorcery", "colors": ["G"], "cost": 2, "effect": "buff", "buff": { "power": 3, "toughness": 3, "duration": "turn" }, "text": "Une créature que vous contrôlez gagne +3/+3 jusqu'à la fin du tour.", "rarity": "common" }
   ]
 }
