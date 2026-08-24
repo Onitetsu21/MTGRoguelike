@@ -1,0 +1,3400 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "category": "cards",
+    "source": "Scryfall set:blb (import auto — créatures ; mots-clés évergreens mappés)",
+    "description": "Import hybride Bloomburrow. Créatures avec stats/mots-clés/couleurs/nom FR + tag archétype. Les capacités spéciales viennent de cards-bloomburrow-overrides.json.",
+    "keyword_labels_fr": {
+      "flying": "Vol",
+      "trample": "Piétinement",
+      "deathtouch": "Toucher mortel",
+      "lifelink": "Lien de vie",
+      "haste": "Célérité",
+      "reach": "Portée",
+      "initiative": "Initiative",
+      "indestructible": "Indestructible"
+    },
+    "generated_at": "2026-08-24",
+    "count": 160
+  },
+  "cards": [
+    {
+      "id": "bonecache_overseer",
+      "name": "Superviseur de la cache d'os",
+      "name_en": "Bonecache Overseer",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 1,
+      "power": 1,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "brave_kin_duo",
+      "name": "Duo sangbrave",
+      "name_en": "Brave-Kin Duo",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 1,
+      "power": 1,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "flowerfoot_swordmaster",
+      "name": "Maîtresse d'épée pattefleur",
+      "name_en": "Flowerfoot Swordmaster",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 1,
+      "power": 1,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "heartfire_hero",
+      "name": "Héros pyrocœur",
+      "name_en": "Heartfire Hero",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 1,
+      "power": 1,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "hired_claw",
+      "name": "Griffeur à gages",
+      "name_en": "Hired Claw",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 1,
+      "power": 1,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "iridescent_vinelasher",
+      "name": "Fouettevigne iridescent",
+      "name_en": "Iridescent Vinelasher",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 1,
+      "power": 1,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "mistbreath_elder",
+      "name": "Aînée soufflebrume",
+      "name_en": "Mistbreath Elder",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 1,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "mockingbird",
+      "name": "Oiseau moqueur",
+      "name_en": "Mockingbird",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 1,
+      "power": 1,
+      "toughness": 1,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "Vol.",
+      "rarity": "rare"
+    },
+    {
+      "id": "pawpatch_recruit",
+      "name": "Recrue Pattelopin",
+      "name_en": "Pawpatch Recruit",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 1,
+      "power": 2,
+      "toughness": 1,
+      "keywords": [
+        "trample"
+      ],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "Piétinement.",
+      "rarity": "rare"
+    },
+    {
+      "id": "ravine_raider",
+      "name": "Pillard du ravin",
+      "name_en": "Ravine Raider",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 1,
+      "power": 1,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "seasoned_warrenguard",
+      "name": "Gardeterrier aguerri",
+      "name_en": "Seasoned Warrenguard",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 1,
+      "power": 1,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "sunshower_druid",
+      "name": "Druide de la pluie solaire",
+      "name_en": "Sunshower Druid",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 1,
+      "power": 0,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "valley_mightcaller",
+      "name": "Meneur de force de Vallée",
+      "name_en": "Valley Mightcaller",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 1,
+      "power": 1,
+      "toughness": 1,
+      "keywords": [
+        "trample"
+      ],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "Piétinement.",
+      "rarity": "rare"
+    },
+    {
+      "id": "agate_blade_assassin",
+      "name": "Assassine à lame d'agate",
+      "name_en": "Agate-Blade Assassin",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "azure_beastbinder",
+      "name": "Lieur-de-bête d'azur",
+      "name_en": "Azure Beastbinder",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "bakersbane_duo",
+      "name": "Duo fléau-de-boulanger",
+      "name_en": "Bakersbane Duo",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "bark_knuckle_boxer",
+      "name": "Boxeuse aux poings-d'écorce",
+      "name_en": "Bark-Knuckle Boxer",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 2,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "bellowing_crier",
+      "name": "Crieur beuglard",
+      "name_en": "Bellowing Crier",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "bonebind_orator",
+      "name": "Orateur entravos",
+      "name_en": "Bonebind Orator",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "brazen_collector",
+      "name": "Collectionneuse intrépide",
+      "name_en": "Brazen Collector",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 1,
+      "keywords": [
+        "initiative"
+      ],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "Initiative.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "brightblade_stoat",
+      "name": "Hermine luxlame",
+      "name_en": "Brightblade Stoat",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [
+        "lifelink",
+        "initiative"
+      ],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "Lien de vie, Initiative.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "bushy_bodyguard",
+      "name": "Garde du corps touffu",
+      "name_en": "Bushy Bodyguard",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "coruscation_mage",
+      "name": "Mage de scintillement",
+      "name_en": "Coruscation Mage",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "dour_port_mage",
+      "name": "Portmage austère",
+      "name_en": "Dour Port-Mage",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "emberheart_challenger",
+      "name": "Défieuse braisecœur",
+      "name_en": "Emberheart Challenger",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [
+        "haste"
+      ],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "Célérité.",
+      "rarity": "rare"
+    },
+    {
+      "id": "essence_channeler",
+      "name": "Canaliseur d'essence",
+      "name_en": "Essence Channeler",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "finneas_ace_archer",
+      "name": "Finnéas, as de l'arc",
+      "name_en": "Finneas, Ace Archer",
+      "type": "creature",
+      "colors": [
+        "G",
+        "W"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [
+        "reach"
+      ],
+      "archetypes": [],
+      "text": "Portée.",
+      "rarity": "rare"
+    },
+    {
+      "id": "fireglass_mentor",
+      "name": "Mentor verrefeu",
+      "name_en": "Fireglass Mentor",
+      "type": "creature",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [
+        "rakdos"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "flamecache_gecko",
+      "name": "Gecko de la cacheflamme",
+      "name_en": "Flamecache Gecko",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "gev_scaled_scorch",
+      "name": "Gev, brûleur à écailles",
+      "name_en": "Gev, Scaled Scorch",
+      "type": "creature",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "cost": 2,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "rakdos"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "jolly_gerbils",
+      "name": "Gerbilles joyeuses",
+      "name_en": "Jolly Gerbils",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "keen_eyed_curator",
+      "name": "Conservateur à l'œil perçant",
+      "name_en": "Keen-Eyed Curator",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 2,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "kitsa_otterball_elite",
+      "name": "Kitsa, élite de loutreballe",
+      "name_en": "Kitsa, Otterball Elite",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "mythic"
+    },
+    {
+      "id": "lifecreed_duo",
+      "name": "Duo crédo-de-vie",
+      "name_en": "Lifecreed Duo",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 2,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "Vol.",
+      "rarity": "common"
+    },
+    {
+      "id": "manifold_mouse",
+      "name": "Souris polyvalente",
+      "name_en": "Manifold Mouse",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "nettle_guard",
+      "name": "Garde des orties",
+      "name_en": "Nettle Guard",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 2,
+      "power": 3,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "osteomancer_adept",
+      "name": "Expert ostéomancien",
+      "name_en": "Osteomancer Adept",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [
+        "deathtouch"
+      ],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "Toucher mortel.",
+      "rarity": "rare"
+    },
+    {
+      "id": "persistent_marshstalker",
+      "name": "Pisteur des marécages persistant",
+      "name_en": "Persistent Marshstalker",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 2,
+      "power": 3,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "plumecreed_escort",
+      "name": "Escorte crédo-de-plume",
+      "name_en": "Plumecreed Escort",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 1,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "Vol.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "pond_prophet",
+      "name": "Prophète de l'étang",
+      "name_en": "Pond Prophet",
+      "type": "creature",
+      "colors": [
+        "G",
+        "U"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "raccoon_rallier",
+      "name": "Rallieur de ratons-laveurs",
+      "name_en": "Raccoon Rallier",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "shoreline_looter",
+      "name": "Détrousseur des rivages",
+      "name_en": "Shoreline Looter",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "starscape_cleric",
+      "name": "Clerc astrosophe",
+      "name_en": "Starscape Cleric",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 1,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "Vol.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "steampath_charger",
+      "name": "Chargeur passevapeur",
+      "name_en": "Steampath Charger",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "stormcatch_mentor",
+      "name": "Mentor attrape-orage",
+      "name_en": "Stormcatch Mentor",
+      "type": "creature",
+      "colors": [
+        "R",
+        "U"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 1,
+      "keywords": [
+        "haste"
+      ],
+      "archetypes": [
+        "izzet"
+      ],
+      "text": "Célérité.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "tender_wildguide",
+      "name": "Guidebois délicat",
+      "name_en": "Tender Wildguide",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "thornvault_forager",
+      "name": "Fureteur sautépine",
+      "name_en": "Thornvault Forager",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "thought_shucker",
+      "name": "Écosseur de pensées",
+      "name_en": "Thought Shucker",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "three_tree_mascot",
+      "name": "Mascotte des Trois arbres",
+      "name_en": "Three Tree Mascot",
+      "type": "creature",
+      "colors": [],
+      "cost": 2,
+      "power": 2,
+      "toughness": 1,
+      "keywords": [],
+      "archetypes": [],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "three_tree_rootweaver",
+      "name": "Tisseracines des Trois arbres",
+      "name_en": "Three Tree Rootweaver",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "three_tree_scribe",
+      "name": "Scribe des Trois arbres",
+      "name_en": "Three Tree Scribe",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "thundertrap_trainer",
+      "name": "Instructeur piègefoudre",
+      "name_en": "Thundertrap Trainer",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "valley_questcaller",
+      "name": "Meneur de quête de Vallée",
+      "name_en": "Valley Questcaller",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "valley_rotcaller",
+      "name": "Meneuse de putréfaction de Vallée",
+      "name_en": "Valley Rotcaller",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 2,
+      "power": 1,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "vinereap_mentor",
+      "name": "Mentor cueillevigne",
+      "name_en": "Vinereap Mentor",
+      "type": "creature",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "cost": 2,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "wandertale_mentor",
+      "name": "Mentor mythinérant",
+      "name_en": "Wandertale Mentor",
+      "type": "creature",
+      "colors": [
+        "G",
+        "R"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "gruul"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "warren_elder",
+      "name": "Aîné du terrier",
+      "name_en": "Warren Elder",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "whiskerquill_scribe",
+      "name": "Scribe plumoustache",
+      "name_en": "Whiskerquill Scribe",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 2,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "barkform_harvester",
+      "name": "Moissonneur écorciforme",
+      "name_en": "Barkform Harvester",
+      "type": "creature",
+      "colors": [],
+      "cost": 3,
+      "power": 2,
+      "toughness": 3,
+      "keywords": [
+        "reach"
+      ],
+      "archetypes": [],
+      "text": "Portée.",
+      "rarity": "common"
+    },
+    {
+      "id": "baylen_the_haymaker",
+      "name": "Baylen, le Taille-foin",
+      "name_en": "Baylen, the Haymaker",
+      "type": "creature",
+      "colors": [
+        "G",
+        "R",
+        "W"
+      ],
+      "cost": 3,
+      "power": 4,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "brambleguard_veteran",
+      "name": "Vétérane de la garderonce",
+      "name_en": "Brambleguard Veteran",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "byway_barterer",
+      "name": "Troqueur des routes secondaires",
+      "name_en": "Byway Barterer",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "camellia_the_seedmiser",
+      "name": "Camellia, la Grippe-graine",
+      "name_en": "Camellia, the Seedmiser",
+      "type": "creature",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "cindering_cutthroat",
+      "name": "Surineuse des cendres",
+      "name_en": "Cindering Cutthroat",
+      "type": "creature",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "rakdos"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "clement_the_worrywort",
+      "name": "Clément, l'Herbetrouble",
+      "name_en": "Clement, the Worrywort",
+      "type": "creature",
+      "colors": [
+        "G",
+        "U"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "clifftop_lookout",
+      "name": "Vigie du haut des falaises",
+      "name_en": "Clifftop Lookout",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 3,
+      "power": 1,
+      "toughness": 2,
+      "keywords": [
+        "reach"
+      ],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "Portée.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "corpseberry_cultivator",
+      "name": "Cultivatrice de mortebaies",
+      "name_en": "Corpseberry Cultivator",
+      "type": "creature",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "curious_forager",
+      "name": "Récolteur curieux",
+      "name_en": "Curious Forager",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "daggerfang_duo",
+      "name": "Duo daguecroc",
+      "name_en": "Daggerfang Duo",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [
+        "deathtouch"
+      ],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "Toucher mortel.",
+      "rarity": "common"
+    },
+    {
+      "id": "darkstar_augur",
+      "name": "Augure sombrétoile",
+      "name_en": "Darkstar Augur",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 3,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "Vol.",
+      "rarity": "rare"
+    },
+    {
+      "id": "druid_of_the_spade",
+      "name": "Druide de la bêche",
+      "name_en": "Druid of the Spade",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "finch_formation",
+      "name": "Passereaux en formation",
+      "name_en": "Finch Formation",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "Vol.",
+      "rarity": "common"
+    },
+    {
+      "id": "glarb_calamity_s_augur",
+      "name": "Glarb, Augure de Calamité",
+      "name_en": "Glarb, Calamity's Augur",
+      "type": "creature",
+      "colors": [
+        "B",
+        "G",
+        "U"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 4,
+      "keywords": [
+        "deathtouch"
+      ],
+      "archetypes": [
+        "dimir",
+        "golgari",
+        "simic"
+      ],
+      "text": "Toucher mortel.",
+      "rarity": "mythic"
+    },
+    {
+      "id": "harnesser_of_storms",
+      "name": "Harnacheuse des orages",
+      "name_en": "Harnesser of Storms",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 3,
+      "power": 1,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "harvestrite_host",
+      "name": "Hôte du rite des moissons",
+      "name_en": "Harvestrite Host",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "hazardroot_herbalist",
+      "name": "Herboriste risqueracine",
+      "name_en": "Hazardroot Herbalist",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 3,
+      "power": 1,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "hearthborn_battler",
+      "name": "Combattant né de l'âtre",
+      "name_en": "Hearthborn Battler",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 3,
+      "keywords": [
+        "haste"
+      ],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "Célérité.",
+      "rarity": "rare"
+    },
+    {
+      "id": "helga_skittish_seer",
+      "name": "Helga, voyante inquiète",
+      "name_en": "Helga, Skittish Seer",
+      "type": "creature",
+      "colors": [
+        "G",
+        "U",
+        "W"
+      ],
+      "cost": 3,
+      "power": 1,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "mythic"
+    },
+    {
+      "id": "honored_dreyleader",
+      "name": "Chef de bauge honoré",
+      "name_en": "Honored Dreyleader",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 3,
+      "power": 1,
+      "toughness": 1,
+      "keywords": [
+        "trample"
+      ],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "Piétinement.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "intrepid_rabbit",
+      "name": "Lapine intrépide",
+      "name_en": "Intrepid Rabbit",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "jackdaw_savior",
+      "name": "Sauveur choucas",
+      "name_en": "Jackdaw Savior",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 1,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "Vol.",
+      "rarity": "rare"
+    },
+    {
+      "id": "kindlespark_duo",
+      "name": "Duo brûlétincelle",
+      "name_en": "Kindlespark Duo",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 3,
+      "power": 1,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "long_river_lurker",
+      "name": "Guetteur de Longue-Rivière",
+      "name_en": "Long River Lurker",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "mabel_heir_to_cragflame",
+      "name": "Mabel, héritière de Flamme du roc",
+      "name_en": "Mabel, Heir to Cragflame",
+      "type": "creature",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "mindwhisker",
+      "name": "Sourcier d'esprit",
+      "name_en": "Mindwhisker",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "moonrise_cleric",
+      "name": "Clerc de lune",
+      "name_en": "Moonrise Cleric",
+      "type": "creature",
+      "colors": [
+        "B",
+        "W"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 3,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "orzhov"
+      ],
+      "text": "Vol.",
+      "rarity": "common"
+    },
+    {
+      "id": "moonstone_harbinger",
+      "name": "Annonciateur de la pierre de lune",
+      "name_en": "Moonstone Harbinger",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 3,
+      "power": 1,
+      "toughness": 3,
+      "keywords": [
+        "deathtouch",
+        "flying"
+      ],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "Toucher mortel, Vol.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "mouse_trapper",
+      "name": "Trappeur souris",
+      "name_en": "Mouse Trapper",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "muerra_trash_tactician",
+      "name": "Muerra, tacticienne du rebut",
+      "name_en": "Muerra, Trash Tactician",
+      "type": "creature",
+      "colors": [
+        "G",
+        "R"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "gruul"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "nightwhorl_hermit",
+      "name": "Ermite spirenuit",
+      "name_en": "Nightwhorl Hermit",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 3,
+      "power": 1,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "plumecreed_mentor",
+      "name": "Mentor crédo-de-plume",
+      "name_en": "Plumecreed Mentor",
+      "type": "creature",
+      "colors": [
+        "U",
+        "W"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 3,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius"
+      ],
+      "text": "Vol.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "roughshod_duo",
+      "name": "Duo chaussebrute",
+      "name_en": "Roughshod Duo",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [
+        "trample"
+      ],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "Piétinement.",
+      "rarity": "common"
+    },
+    {
+      "id": "scrapshooter",
+      "name": "Tireuse-à-brac",
+      "name_en": "Scrapshooter",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 3,
+      "power": 4,
+      "toughness": 4,
+      "keywords": [
+        "reach"
+      ],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "Portée.",
+      "rarity": "rare"
+    },
+    {
+      "id": "seedglaive_mentor",
+      "name": "Mentor glaivegraine",
+      "name_en": "Seedglaive Mentor",
+      "type": "creature",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [
+        "haste"
+      ],
+      "archetypes": [],
+      "text": "Célérité.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "shrike_force",
+      "name": "Unité grièche",
+      "name_en": "Shrike Force",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 3,
+      "power": 1,
+      "toughness": 3,
+      "keywords": [
+        "flying",
+        "initiative"
+      ],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "Vol, Initiative.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "starlit_soothsayer",
+      "name": "Aruspice étoilée",
+      "name_en": "Starlit Soothsayer",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "Vol.",
+      "rarity": "common"
+    },
+    {
+      "id": "stickytongue_sentinel",
+      "name": "Sentinelle collelangue",
+      "name_en": "Stickytongue Sentinel",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [
+        "reach"
+      ],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "Portée.",
+      "rarity": "common"
+    },
+    {
+      "id": "tempest_angler",
+      "name": "Pêcheur de tempête",
+      "name_en": "Tempest Angler",
+      "type": "creature",
+      "colors": [
+        "R",
+        "U"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "the_infamous_cruelclaw",
+      "name": "L'infâme Vilegriffe",
+      "name_en": "The Infamous Cruelclaw",
+      "type": "creature",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "rakdos"
+      ],
+      "text": "",
+      "rarity": "mythic"
+    },
+    {
+      "id": "thieving_otter",
+      "name": "Loutre voleuse",
+      "name_en": "Thieving Otter",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "thistledown_players",
+      "name": "Troupe de Buttechardon",
+      "name_en": "Thistledown Players",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "thought_stalker_warlock",
+      "name": "Psychagogue pisteur de pensées",
+      "name_en": "Thought-Stalker Warlock",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "tidecaller_mentor",
+      "name": "Mentor meneur de vague",
+      "name_en": "Tidecaller Mentor",
+      "type": "creature",
+      "colors": [
+        "B",
+        "U"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "dimir"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "valley_flamecaller",
+      "name": "Meneur de flammes de Vallée",
+      "name_en": "Valley Flamecaller",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "valley_floodcaller",
+      "name": "Meneuse de flots de Vallée",
+      "name_en": "Valley Floodcaller",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 3,
+      "power": 2,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "waterspout_warden",
+      "name": "Garde des trombes",
+      "name_en": "Waterspout Warden",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "zoraline_cosmos_caller",
+      "name": "Zoraline, meneuse du cosmos",
+      "name_en": "Zoraline, Cosmos Caller",
+      "type": "creature",
+      "colors": [
+        "B",
+        "W"
+      ],
+      "cost": 3,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "orzhov"
+      ],
+      "text": "Vol.",
+      "rarity": "rare"
+    },
+    {
+      "id": "alania_s_pathmaker",
+      "name": "Ouvrevoie d'Alania",
+      "name_en": "Alania's Pathmaker",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 4,
+      "power": 4,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "beza_the_bounding_spring",
+      "name": "Beuza, le printemps bondissant",
+      "name_en": "Beza, the Bounding Spring",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 4,
+      "power": 4,
+      "toughness": 5,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "mythic"
+    },
+    {
+      "id": "brambleguard_captain",
+      "name": "Capitaine de la garderonce",
+      "name_en": "Brambleguard Captain",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 4,
+      "power": 2,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "bria_riptide_rogue",
+      "name": "Bria, gredine des contre-courants",
+      "name_en": "Bria, Riptide Rogue",
+      "type": "creature",
+      "colors": [
+        "R",
+        "U"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "mythic"
+    },
+    {
+      "id": "downwind_ambusher",
+      "name": "Embusqueur en aval",
+      "name_en": "Downwind Ambusher",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 4,
+      "power": 4,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "dreamdew_entrancer",
+      "name": "Enjôleur rêverosée",
+      "name_en": "Dreamdew Entrancer",
+      "type": "creature",
+      "colors": [
+        "G",
+        "U"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 4,
+      "keywords": [
+        "reach"
+      ],
+      "archetypes": [],
+      "text": "Portée.",
+      "rarity": "rare"
+    },
+    {
+      "id": "frilled_sparkshooter",
+      "name": "Tireur de braise à jabots",
+      "name_en": "Frilled Sparkshooter",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [
+        "reach"
+      ],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "Portée.",
+      "rarity": "common"
+    },
+    {
+      "id": "hugs_grisly_guardian",
+      "name": "Kâlin, horrible gardien",
+      "name_en": "Hugs, Grisly Guardian",
+      "type": "creature",
+      "colors": [
+        "G",
+        "R"
+      ],
+      "cost": 4,
+      "power": 5,
+      "toughness": 5,
+      "keywords": [
+        "trample"
+      ],
+      "archetypes": [
+        "gruul"
+      ],
+      "text": "Piétinement.",
+      "rarity": "mythic"
+    },
+    {
+      "id": "lightshell_duo",
+      "name": "Duo coquelux",
+      "name_en": "Lightshell Duo",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "lilysplash_mentor",
+      "name": "Mentor saute-nénuphar",
+      "name_en": "Lilysplash Mentor",
+      "type": "creature",
+      "colors": [
+        "G",
+        "U"
+      ],
+      "cost": 4,
+      "power": 4,
+      "toughness": 4,
+      "keywords": [
+        "reach"
+      ],
+      "archetypes": [],
+      "text": "Portée.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "mind_drill_assailant",
+      "name": "Assaillant fore-esprit",
+      "name_en": "Mind Drill Assailant",
+      "type": "creature",
+      "colors": [
+        "B",
+        "U"
+      ],
+      "cost": 4,
+      "power": 2,
+      "toughness": 5,
+      "keywords": [],
+      "archetypes": [
+        "dimir"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "rust_shield_rampager",
+      "name": "Saccageur au bouclier rouillé",
+      "name_en": "Rust-Shield Rampager",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 4,
+      "power": 4,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "salvation_swan",
+      "name": "Cygne du salut",
+      "name_en": "Salvation Swan",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "Vol.",
+      "rarity": "rare"
+    },
+    {
+      "id": "seedpod_squire",
+      "name": "Écuyer à cosse",
+      "name_en": "Seedpod Squire",
+      "type": "creature",
+      "colors": [
+        "U",
+        "W"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius"
+      ],
+      "text": "Vol.",
+      "rarity": "common"
+    },
+    {
+      "id": "splash_lasher",
+      "name": "Flagellateur d'éclaboussures",
+      "name_en": "Splash Lasher",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "star_charter",
+      "name": "Cartographe stellaire",
+      "name_en": "Star Charter",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 1,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "Vol.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "stormsplitter",
+      "name": "Fendeur d'orage",
+      "name_en": "Stormsplitter",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 4,
+      "power": 1,
+      "toughness": 4,
+      "keywords": [
+        "haste"
+      ],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "Célérité.",
+      "rarity": "mythic"
+    },
+    {
+      "id": "sunspine_lynx",
+      "name": "Lynx soléchine",
+      "name_en": "Sunspine Lynx",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 4,
+      "power": 5,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "teapot_slinger",
+      "name": "Frondeur de théières",
+      "name_en": "Teapot Slinger",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "thornplate_intimidator",
+      "name": "Intimidateur plaquépine",
+      "name_en": "Thornplate Intimidator",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 4,
+      "power": 4,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "treeguard_duo",
+      "name": "Duo sylvegarde",
+      "name_en": "Treeguard Duo",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "treetop_sentries",
+      "name": "Sentinelles des cimes",
+      "name_en": "Treetop Sentries",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 4,
+      "power": 2,
+      "toughness": 4,
+      "keywords": [
+        "reach"
+      ],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "Portée.",
+      "rarity": "common"
+    },
+    {
+      "id": "veteran_guardmouse",
+      "name": "Souris de garde vétérane",
+      "name_en": "Veteran Guardmouse",
+      "type": "creature",
+      "colors": [
+        "R",
+        "W"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "vren_the_relentless",
+      "name": "Vren, l'Implacable",
+      "name_en": "Vren, the Relentless",
+      "type": "creature",
+      "colors": [
+        "B",
+        "U"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "dimir"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "warren_warleader",
+      "name": "Chef de guerre du terrier",
+      "name_en": "Warren Warleader",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 4,
+      "power": 4,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "mythic"
+    },
+    {
+      "id": "wax_wane_witness",
+      "name": "Témoin des phases lunaires",
+      "name_en": "Wax-Wane Witness",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 4,
+      "power": 2,
+      "toughness": 4,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "Vol.",
+      "rarity": "common"
+    },
+    {
+      "id": "whiskervale_forerunner",
+      "name": "Précurseur de Val-Moustache",
+      "name_en": "Whiskervale Forerunner",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 4,
+      "power": 3,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "wick_the_whorled_mind",
+      "name": "Mèche, l'esprit enspiré",
+      "name_en": "Wick, the Whorled Mind",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 4,
+      "power": 2,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "alania_divergent_storm",
+      "name": "Alania, tempête divergente",
+      "name_en": "Alania, Divergent Storm",
+      "type": "creature",
+      "colors": [
+        "R",
+        "U"
+      ],
+      "cost": 5,
+      "power": 3,
+      "toughness": 5,
+      "keywords": [],
+      "archetypes": [
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "rare"
+    },
+    {
+      "id": "dragonhawk_fate_s_tempest",
+      "name": "Sacredragon, tempête du destin",
+      "name_en": "Dragonhawk, Fate's Tempest",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 5,
+      "power": 5,
+      "toughness": 5,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "Vol.",
+      "rarity": "mythic"
+    },
+    {
+      "id": "driftgloom_coyote",
+      "name": "Coyote mornerrant",
+      "name_en": "Driftgloom Coyote",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 5,
+      "power": 3,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "fecund_greenshell",
+      "name": "Carapace herbée féconde",
+      "name_en": "Fecund Greenshell",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 5,
+      "power": 4,
+      "toughness": 6,
+      "keywords": [
+        "reach"
+      ],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "Portée.",
+      "rarity": "rare"
+    },
+    {
+      "id": "glidedive_duo",
+      "name": "Duo planesaut",
+      "name_en": "Glidedive Duo",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 5,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "Vol.",
+      "rarity": "common"
+    },
+    {
+      "id": "head_of_the_homestead",
+      "name": "Matriarche de la ferme",
+      "name_en": "Head of the Homestead",
+      "type": "creature",
+      "colors": [
+        "G",
+        "W"
+      ],
+      "cost": 5,
+      "power": 3,
+      "toughness": 2,
+      "keywords": [],
+      "archetypes": [],
+      "text": "",
+      "rarity": "common"
+    },
+    {
+      "id": "hivespine_wolverine",
+      "name": "Glouton ruchéchine",
+      "name_en": "Hivespine Wolverine",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 5,
+      "power": 5,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "junkblade_bruiser",
+      "name": "Cogneuse lamerebuts",
+      "name_en": "Junkblade Bruiser",
+      "type": "creature",
+      "colors": [
+        "G",
+        "R"
+      ],
+      "cost": 5,
+      "power": 4,
+      "toughness": 5,
+      "keywords": [
+        "trample"
+      ],
+      "archetypes": [
+        "gruul"
+      ],
+      "text": "Piétinement.",
+      "rarity": "common"
+    },
+    {
+      "id": "kastral_the_windcrested",
+      "name": "Kastral, huppée de vent",
+      "name_en": "Kastral, the Windcrested",
+      "type": "creature",
+      "colors": [
+        "U",
+        "W"
+      ],
+      "cost": 5,
+      "power": 4,
+      "toughness": 5,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius"
+      ],
+      "text": "Vol.",
+      "rarity": "rare"
+    },
+    {
+      "id": "knightfisher",
+      "name": "Chevalier-pêcheur",
+      "name_en": "Knightfisher",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 5,
+      "power": 4,
+      "toughness": 5,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "Vol.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "maha_its_feathers_night",
+      "name": "Maha, Sa Nocturnissime Plume",
+      "name_en": "Maha, Its Feathers Night",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 5,
+      "power": 6,
+      "toughness": 5,
+      "keywords": [
+        "flying",
+        "trample"
+      ],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "Vol, Piétinement.",
+      "rarity": "mythic"
+    },
+    {
+      "id": "pileated_provisioner",
+      "name": "Approvisionneur grand pic",
+      "name_en": "Pileated Provisioner",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 5,
+      "power": 3,
+      "toughness": 4,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "Vol.",
+      "rarity": "common"
+    },
+    {
+      "id": "quaketusk_boar",
+      "name": "Sanglier sismivoire",
+      "name_en": "Quaketusk Boar",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 5,
+      "power": 5,
+      "toughness": 5,
+      "keywords": [
+        "reach",
+        "haste",
+        "trample"
+      ],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "Portée, Célérité, Piétinement.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "reptilian_recruiter",
+      "name": "Recruteuse reptilienne",
+      "name_en": "Reptilian Recruiter",
+      "type": "creature",
+      "colors": [
+        "R"
+      ],
+      "cost": 5,
+      "power": 4,
+      "toughness": 2,
+      "keywords": [
+        "trample"
+      ],
+      "archetypes": [
+        "rakdos",
+        "gruul",
+        "boros",
+        "izzet"
+      ],
+      "text": "Piétinement.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "serra_redeemer",
+      "name": "Serra la rédemptrice",
+      "name_en": "Serra Redeemer",
+      "type": "creature",
+      "colors": [
+        "W"
+      ],
+      "cost": 5,
+      "power": 2,
+      "toughness": 4,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius",
+        "selesnya",
+        "orzhov",
+        "boros"
+      ],
+      "text": "Vol.",
+      "rarity": "rare"
+    },
+    {
+      "id": "skyskipper_duo",
+      "name": "Duo sautevole",
+      "name_en": "Skyskipper Duo",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 5,
+      "power": 3,
+      "toughness": 3,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "Vol.",
+      "rarity": "common"
+    },
+    {
+      "id": "starseer_mentor",
+      "name": "Mentor astrovoyant",
+      "name_en": "Starseer Mentor",
+      "type": "creature",
+      "colors": [
+        "B",
+        "W"
+      ],
+      "cost": 5,
+      "power": 3,
+      "toughness": 5,
+      "keywords": [
+        "flying"
+      ],
+      "archetypes": [
+        "orzhov"
+      ],
+      "text": "Vol.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "ygra_eater_of_all",
+      "name": "Ygra, dévoreur du Tout",
+      "name_en": "Ygra, Eater of All",
+      "type": "creature",
+      "colors": [
+        "B",
+        "G"
+      ],
+      "cost": 5,
+      "power": 6,
+      "toughness": 6,
+      "keywords": [],
+      "archetypes": [
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "mythic"
+    },
+    {
+      "id": "byrke_long_ear_of_the_law",
+      "name": "Byrke, oreille armée de la justice",
+      "name_en": "Byrke, Long Ear of the Law",
+      "type": "creature",
+      "colors": [
+        "G",
+        "W"
+      ],
+      "cost": 6,
+      "power": 4,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [],
+      "text": "",
+      "rarity": "mythic"
+    },
+    {
+      "id": "daring_waverider",
+      "name": "Chevauchevague audacieux",
+      "name_en": "Daring Waverider",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 6,
+      "power": 4,
+      "toughness": 4,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "galewind_moose",
+      "name": "Élan des bourrasques",
+      "name_en": "Galewind Moose",
+      "type": "creature",
+      "colors": [
+        "G"
+      ],
+      "cost": 6,
+      "power": 6,
+      "toughness": 6,
+      "keywords": [
+        "reach",
+        "trample"
+      ],
+      "archetypes": [
+        "gruul",
+        "selesnya",
+        "golgari",
+        "simic"
+      ],
+      "text": "Portée, Piétinement.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "rottenmouth_viper",
+      "name": "Vipère putregueule",
+      "name_en": "Rottenmouth Viper",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 6,
+      "power": 6,
+      "toughness": 6,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "mythic"
+    },
+    {
+      "id": "wick_s_patrol",
+      "name": "Patrouille de Mèche",
+      "name_en": "Wick's Patrol",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 6,
+      "power": 5,
+      "toughness": 3,
+      "keywords": [],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "eddymurk_crab",
+      "name": "Crabe de la grisaille",
+      "name_en": "Eddymurk Crab",
+      "type": "creature",
+      "colors": [
+        "U"
+      ],
+      "cost": 7,
+      "power": 5,
+      "toughness": 5,
+      "keywords": [],
+      "archetypes": [
+        "azorius",
+        "dimir",
+        "simic",
+        "izzet"
+      ],
+      "text": "",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "huskburster_swarm",
+      "name": "Essaim percecosse",
+      "name_en": "Huskburster Swarm",
+      "type": "creature",
+      "colors": [
+        "B"
+      ],
+      "cost": 8,
+      "power": 6,
+      "toughness": 6,
+      "keywords": [
+        "deathtouch"
+      ],
+      "archetypes": [
+        "dimir",
+        "rakdos",
+        "orzhov",
+        "golgari"
+      ],
+      "text": "Toucher mortel.",
+      "rarity": "uncommon"
+    }
+  ]
+}
